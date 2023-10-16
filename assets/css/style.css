@@ -1,0 +1,9 @@
+/*-- Override default style */
+body {
+    color: #3d3b37;
+    font-family: 'Indie Flower', cursive;
+}
+
+.logo {
+    font-size: 2m;
+}
