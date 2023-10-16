@@ -39,21 +39,83 @@
   <body>
     <!-- Header -->
     <header>
-        <img class="logotype" src="assets/images/logo.webp" alt="logo">
+      <img class="logotype" src="assets/images/logo.webp" alt="logo" />
       <h1>Train your Brain!</h1>
     </header>
     <!-- Main -->
     <main>
-<section class="welcome">
-    <div class="welcome-text">
-        <p>Welcome to this memory game!</p>
-        <p class="enter-name">Please enter your name</p>
-        <input id="username" type="text">
-    </div>
-    <button data-type="submit" class="player-name">Enter</button>
+      <!--Welcome section -->
+      <section class="welcome">
+        <div class="welcome-text">
+          <p>Welcome to this memory game!</p>
+          <p class="enter-name">Please enter your name:</p>
+          <input id="username" type="text" />
+        </div>
+        <button data-type="submit" class="player-name">Enter</button>
+      </section>
+      <!-- Game section -->
+      <section class="memory-cards">
+        <div class="card-box">
+          <!-- Card images and background -->
+          <figure class="card">
+            <img
+              class="front-card"
+              src="assets/images/bear.webp"
+              alt="Front card showing a bear"
+            />
+            <img
+              class="back-card"
+              src="assets/images/paws.webp"
+              alt="Back card"
+            />
+          </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/cat.webp" alt="Front card showing a cat" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/chicken.webp" alt="Front card showing a chicken" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/deer.webp" alt="Front card showing a deer" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/dog.webp" alt="Front card showing a dog" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/donkey.webp" alt="Front card showing a donkey" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/elephant.webp" alt="Front card showing an elephant" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/fox.webp" alt="Front card showing a fox" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/giraffe.webp" alt="Front card showing a giraffe" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/lion.webp" alt="Front card showing a lion" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/panda.webp" alt="Front card showing a panda" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
+        <figure class="card">
+            <img class="front-card" src="assets/images/tiger.webp" alt="Front card showing a tiger" />
+            <img class="back-card" src="assets/images/paws.webp" alt="Back card" />
+        </figure>
 
-
-</section>
+        </div>
+      </section>
     </main>
 
     <script src="assets/js/script.js"></script>
