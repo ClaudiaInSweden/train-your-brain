@@ -104,3 +104,13 @@ main {
     border-top: 2px solid #039475;
     color: #039475;
 }
+
+
+@media screen and (min-width: 576px) {
+    .memory-cards {
+
+        width: 480px;
+        height: 480px;
+
+    }
+}
