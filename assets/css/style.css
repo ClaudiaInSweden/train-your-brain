@@ -35,34 +35,6 @@ body {
     font-size: 1rem;
 }
 
-.name-section {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1rem;
-}
-
-#username {
-
-    border-radius: 5px;
-    border-color: #965603;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.btn-username {
-    width: 10rem;
-    background-color: #965603;
-    color: #ffe4c4;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px 10px;
-    font-size: inherit;
-}
-
 .memory-cards {
     position: relative;
     width: 270px;
