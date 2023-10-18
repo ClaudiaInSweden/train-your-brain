@@ -74,6 +74,10 @@ body {
     backface-visibility: hidden;
 }
 
+.front-card {
+    transform: rotateY(180deg);
+}
+
 footer {
     margin-top: auto;
 }
