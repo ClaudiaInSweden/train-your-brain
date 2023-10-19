@@ -40,10 +40,8 @@ function disableCards() {
     secondCard.removeEventListener("click", flipCard);
 
     resetBoard();
+
     matchCount++;
-    if (matchCount == 6) {
-        window.alert("Congratulations! You won the game!");
-    }
     console.log(matchCount);
 }
 
