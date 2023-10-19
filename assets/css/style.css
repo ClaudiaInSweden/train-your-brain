@@ -9,6 +9,7 @@
     letter-spacing: 0.2rem;
 }
 
+/* Body style */
 body {
     width: 100vw;
     min-height: 100vh;
@@ -20,6 +21,7 @@ body {
     align-items: center;
 }
 
+/* Site footer */
 body>footer {
     position: absolute;
     justify-content: center;
@@ -27,9 +29,9 @@ body>footer {
     width: 100%;
     height: 70px;
     background-color: #039475;
-
 }
 
+/* Main heading */
 #logo {
     display: flex;
     text-align: center;
@@ -46,6 +48,7 @@ body>footer {
     font-size: 150%;
 }
 
+/* Grid container which contains all cards */
 .cards-container {
     position: relative;
     perspective: 1000px;
@@ -55,6 +58,7 @@ body>footer {
     grid-template-columns: repeat(3, auto);
 }
 
+/* Style and behaviour of clicked cards */
 .memory-card {
     width: 90px;
     height: 90px;
@@ -72,7 +76,7 @@ body>footer {
     transition: transform 0.2s;
 }
 
-
+/* Style and behaviour of front and back sides of cards in game */
 .front-card,
 .back-card {
     position: absolute;
@@ -90,7 +94,8 @@ body>footer {
     transform: rotateY(180deg);
 }
 
-.start-new-game {
+/* Moves counter and new game button section */
+.moves-new-game {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -100,6 +105,7 @@ body>footer {
     transform: translate(-50%, -50%);
 }
 
+/* Moves counter section */
 #count-moves {
     text-align: center;
     font-size: 130%;
@@ -112,6 +118,7 @@ body>footer {
     padding: 0px 5px;
 }
 
+/* New game button */
 .start-new-game button {
     background-color: #039475;
     color: #ffe4c4;
@@ -131,6 +138,7 @@ body>footer {
     color: #039475;
 }
 
+/* Share game on Facebook */
 #social-media {
     display: flex;
     margin: auto;
@@ -142,24 +150,23 @@ body>footer {
     border-radius: 10px;
 }
 
-
+/* Media query for large devices > 400px */
 @media screen and (min-width: 400px) {
-
     .cards-container {
         gap: 10px;
     }
 }
 
+/* Media query for large devices > 576px */
 @media screen and (min-width: 576px) {
-
     .memory-card {
         width: 120px;
         height: 120px;
     }
 }
 
+/* Media query for devices > 768px */
 @media screen and (min-width: 768px) {
-
     .cards-container {
         grid-template-columns: repeat(4, auto);
     }
@@ -170,8 +177,8 @@ body>footer {
     }
 }
 
+/* Media query for large devices > 1200px */
 @media screen and (min-width: 1200px) {
-
     .memory-card {
         width: 200px;
         height: 200px;
