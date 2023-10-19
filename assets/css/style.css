@@ -169,3 +169,11 @@ body>footer {
         height: 150px;
     }
 }
+
+@media screen and (min-width: 1200px) {
+
+    .memory-card {
+        width: 200px;
+        height: 200px;
+    }
+}

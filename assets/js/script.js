@@ -67,7 +67,7 @@ function showAlert() {
     let myText = "Congratulation! You won the game!";
     setTimeout(() => {
         alert(myText);
-    }, 1000);
+    }, 700);
 }
 /* New game button */
 function restart() {
@@ -76,6 +76,7 @@ function restart() {
         card.addEventListener("click", flipCard);
         resetBoard();
         moves = 0;
+        document.getElementById('nr-of-moves').innerHTML = moves;
         matchCount = 0;
 
     });
