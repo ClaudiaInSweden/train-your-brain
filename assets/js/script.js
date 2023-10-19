@@ -42,7 +42,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500);
+    }, 1000);
 }
 
 function resetBoard() {
@@ -50,11 +50,22 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
+function shuffle() {
     cards.forEach(card => {
         let ramdomPos = Math.floor(Math.random() * 12);
         card.style.order = ramdomPos;
     });
-})();
+};
 
 cards.forEach(card => card.addEventListener("click", flipCard));
+
+/* New game button */
+function restart() {
+    cards.forEach(card => {
+        card.classList.remove('flip');
+        card.addEventListener('click', flipCard);
+        resetBoard();
+        shuffle();
+
+    });
+}
