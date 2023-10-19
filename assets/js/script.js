@@ -14,7 +14,6 @@ function flipCard() {
 
     this.classList.add("flip");
     moves++;
-    console.log(moves);
     document.getElementById('nr-of-moves').innerHTML = moves;
 
     if (!cardIsFlipped) {
@@ -42,8 +41,13 @@ function disableCards() {
 
     resetBoard();
     matchCount++;
+    if (matchCount == 6) {
+        window.alert("Congratulations! You won the game!");
+    }
     console.log(matchCount);
 }
+
+
 /* Turn cards if no match */
 function unflipCards() {
     boardLock = true;
@@ -79,11 +83,10 @@ function restart() {
         shuffle();
     });
 }
-function countMoves() {
-    document.getElementById('nr-of-moves').innerText = moves;
-}
+
 function gameWon() {
-    if (matchCount == 6);
-    alert("Congratulations! You won the game!");
+    if (matchCount == 6) {
+        alert("Congratulations! You won the game!");
+    }
     restart();
 }
