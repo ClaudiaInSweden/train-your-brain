@@ -42,10 +42,11 @@ function disableCards() {
     resetBoard();
 
     matchCount++;
+    if (matchCount == 6) {
+        showAlert();
+    }
     console.log(matchCount);
 }
-
-
 /* Turn cards if no match */
 function unflipCards() {
     boardLock = true;
@@ -62,29 +63,30 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
-/* Shuffle the cards for new game */
-function shuffle() {
-    cards.forEach((card) => {
-        let ramdomPos = Math.floor(Math.random() * 12);
-        card.style.order = ramdomPos;
-    });
+function showAlert() {
+    let myText = "Congratulation! You won the game!";
+    setTimeout(() => {
+        alert(myText);
+    }, 1000);
 }
-
-cards.forEach((card) => card.addEventListener("click", flipCard));
-
 /* New game button */
 function restart() {
     cards.forEach((card) => {
         card.classList.remove("flip");
         card.addEventListener("click", flipCard);
         resetBoard();
-        shuffle();
+        moves = 0;
+        matchCount = 0;
+
     });
 }
+/* Shuffle the cards for new game */
+(function shuffle() {
+    cards.forEach((card) => {
+        let ramdomPos = Math.floor(Math.random() * 12);
+        card.style.order = ramdomPos;
+    });
+})();
 
-function gameWon() {
-    if (matchCount == 6) {
-        alert("Congratulations! You won the game!");
-    }
-    restart();
-}
+
+cards.forEach((card) => card.addEventListener("click", flipCard));
