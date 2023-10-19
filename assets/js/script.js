@@ -15,6 +15,7 @@ function flipCard() {
     this.classList.add("flip");
     moves++;
     console.log(moves);
+    document.getElementById('nr-of-moves').innerHTML = moves;
 
     if (!cardIsFlipped) {
         cardIsFlipped = true;
@@ -27,6 +28,7 @@ function flipCard() {
 
     checkForMatch();
 }
+
 /* Check if card 1 and card 2 match */
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
@@ -78,7 +80,7 @@ function restart() {
     });
 }
 function countMoves() {
-    moves = parseInt(document.getElementById('nr-of-moves').innerText);
+    document.getElementById('nr-of-moves').innerText = moves;
 }
 function gameWon() {
     if (matchCount == 6);
