@@ -68,15 +68,14 @@ function showAlert() {
         alert(myText);
     }, 700);
 }
-/* New game button */
+/* Ask for confirmation before starting a new game */
 function getConfirmation() {
     let startGame = confirm("Are you sure you want to start a new game?");
     if (startGame == true) {
         restart();
-        console.log(getConfirmation);
     }
-
 }
+/* New game button */
 function restart() {
     cards.forEach((card) => {
         card.classList.remove("flip");
