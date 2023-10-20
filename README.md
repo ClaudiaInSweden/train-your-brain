@@ -42,42 +42,22 @@ End business goal: The user shares the game to friens who share it to their frie
 
 ## Features
 
-### Navigation
-
-- The responsive navigation bar on top of the page includes links to the Home, Nature, Activities, Gallery and Contact us page. The Visit Järbo logo is linked to the Start page. The navigation bar is identical on each page to enable easy navigation.
-- It allows users to navigate between pages on all devices without the need to use the "back" button.
-
 ### Home
 
-The Home page is the starting point for users. It provides a short overview of what Järbo has to offer
+The game consists of one page only including a footer with a Facebook Share button.
+
+### Game area
+
+Beneath the title and welcome text the user can see a total of 12 cards with paw-prints on them. 
+The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. If the cards don't match, the cards will be turned and the user may continue unflipping cards to find matches. 
+The board will lock when two cards have been unflipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
+When the user has found all 6 card pair, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, the windos will be closed and the user could start a new game by clicking the button "New Game". To avoid accidential restarts of the game, the user will need to confirm that a new game shall start. 
+When the user confirms, all cards will be flipped back so that the images are no longer visible and shuffled. 
+
+
 
 ![Home Page](assets/readme-docs/home.webp)
 
-### Nature
-
-The Nature page describe in short what the user can expect being outdoors in the area.
-
-![Nature Page](assets/readme-docs/nature.webp)
-
-### Activities
-
-The Activities page describes in short what kind of outdoor activities the user can enjoy.
-There are also links to external information pages and service providers. The links open in a new tab to allow easy navigation without the need to use the back-button.
-
-![Activities Page](assets/readme-docs/activities.webp)
-
-### Gallery
-
-The Gallery page shows images of the area as well as wild animals that the user might be able to see during the stay.
-The images include alt-tags to provide relevant information when screen readers are used.
-
-![Gallery Page](assets/readme-docs/gallery.webp)
-
-### Contact us
-
-The Contact us page enables users to request more information about outdoor activities, listed on the activities page. It includes fields for name, email, and radio buttons to select.
-
-![Contact us Page](assets/readme-docs/contact.webp)
 
 ### Footer
 
