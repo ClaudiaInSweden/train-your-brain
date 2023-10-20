@@ -3,11 +3,13 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     cards.forEach((card) => card.addEventListener("click", flipCard));
+    shuffle();
     /* Shuffle the cards for new game */
+
     function shuffle() {
         cards.forEach((card) => {
-            let ramdomPos = Math.floor(Math.random() * 12);
-            card.style.order = ramdomPos;
+            let randomPos = Math.floor(Math.random() * 12);
+            card.style.order = randomPos;
         });
     };
 });
@@ -60,7 +62,7 @@ function disableCards() {
     }
     console.log(matchCount);
 }
-/* Turn cards if no match */
+/* Unflip cards if no match */
 function unflipCards() {
     boardLock = true;
     setTimeout(() => {
