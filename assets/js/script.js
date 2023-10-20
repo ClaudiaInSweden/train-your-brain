@@ -1,21 +1,18 @@
-//* Wait for the DOM to finish loading before running the game 
-// Get shuffle function and card click event listener
-
-document.addEventListener("DOMContentLoaded", function () {
-    cards.forEach((card) => card.addEventListener("click", flipCard));
-    shuffle();
-    /* Shuffle the cards for new game */
-
-    function shuffle() {
-        cards.forEach((card) => {
-            let randomPos = Math.floor(Math.random() * 12);
-            card.style.order = randomPos;
-        });
-    };
-});
-
 /* Get all cards into an array */
 const cards = document.querySelectorAll(".memory-card");
+
+/* Shuffle the cards for new game */
+
+function shuffleCards() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    });
+}
+
+
+cards.forEach((card) => card.addEventListener("click", flipCard));
+
 
 let cardIsFlipped = false;
 let firstCard, secondCard;
@@ -62,7 +59,7 @@ function disableCards() {
     }
     console.log(matchCount);
 }
-/* Unflip cards if no match */
+/* Turn cards if no match */
 function unflipCards() {
     boardLock = true;
     setTimeout(() => {
@@ -96,9 +93,13 @@ function restart() {
     cards.forEach((card) => {
         card.classList.remove("flip");
         card.addEventListener("click", flipCard);
+    });
+    setTimeout(() => {
         resetBoard();
+        shuffleCards();
         moves = 0;
         document.getElementById("nr-of-moves").innerHTML = moves;
         matchCount = 0;
-    });
+    }, 500);
 }
+
