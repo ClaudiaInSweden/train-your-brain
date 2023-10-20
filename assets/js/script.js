@@ -1,7 +1,8 @@
 //* Wait for the DOM to finish loading before running the game 
-// Get shuffle function and button click event listener
+// Get shuffle function and card click event listener
 
 document.addEventListener("DOMContentLoaded", function () {
+    cards.forEach((card) => card.addEventListener("click", flipCard));
     /* Shuffle the cards for new game */
     function shuffle() {
         cards.forEach((card) => {
@@ -9,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.order = ramdomPos;
         });
     };
-
-    cards.forEach((card) => card.addEventListener("click", flipCard));
 });
 
 /* Get all cards into an array */
@@ -99,6 +98,5 @@ function restart() {
         moves = 0;
         document.getElementById("nr-of-moves").innerHTML = moves;
         matchCount = 0;
-        shuffle();
     });
 }
