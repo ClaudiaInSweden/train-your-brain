@@ -1,3 +1,18 @@
+//* Wait for the DOM to finish loading before running the game 
+// Get shuffle function and button click event listener
+
+document.addEventListener("DOMContentLoaded", function () {
+    /* Shuffle the cards for new game */
+    function shuffle() {
+        cards.forEach((card) => {
+            let ramdomPos = Math.floor(Math.random() * 12);
+            card.style.order = ramdomPos;
+        });
+    };
+
+    cards.forEach((card) => card.addEventListener("click", flipCard));
+});
+
 /* Get all cards into an array */
 const cards = document.querySelectorAll(".memory-card");
 
@@ -84,14 +99,6 @@ function restart() {
         moves = 0;
         document.getElementById("nr-of-moves").innerHTML = moves;
         matchCount = 0;
+        shuffle();
     });
 }
-/* Shuffle the cards for new game */
-(function shuffle() {
-    cards.forEach((card) => {
-        let ramdomPos = Math.floor(Math.random() * 12);
-        card.style.order = ramdomPos;
-    });
-})();
-
-cards.forEach((card) => card.addEventListener("click", flipCard));
