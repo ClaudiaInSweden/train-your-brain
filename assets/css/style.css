@@ -30,7 +30,10 @@ body>footer {
     height: 70px;
     background-color: #039475;
 }
-
+/* Hidden heading */
+.hidden-heading {
+    display: none;
+}
 /* Main heading */
 #logo {
     display: flex;
