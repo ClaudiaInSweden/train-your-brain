@@ -41,6 +41,9 @@ body>footer {
     justify-content: center;
     padding-top: 10px;
 }
+hi {
+    font-weight: 900;
+}
 
 /* Welcome section */
 .welcome-text {
