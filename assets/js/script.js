@@ -76,7 +76,7 @@ function resetBoard() {
 }
 
 function showAlert() {
-    let myText = "Congratulation! You won the game!";
+    let myText = "Congratulation! You found all matches!";
     setTimeout(() => {
         alert(myText);
     }, 700);
