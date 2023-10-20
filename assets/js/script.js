@@ -7,14 +7,13 @@ let boardLock = false;
 let matchCount = 0;
 let moves = 0;
 
-
 function flipCard() {
     if (boardLock) return;
     if (this === firstCard) return;
 
     this.classList.add("flip");
     moves++;
-    document.getElementById('nr-of-moves').innerHTML = moves;
+    document.getElementById("nr-of-moves").innerHTML = moves;
 
     if (!cardIsFlipped) {
         cardIsFlipped = true;
@@ -70,15 +69,22 @@ function showAlert() {
     }, 700);
 }
 /* New game button */
+function getConfirmation() {
+    let startGame = confirm("Are you sure you want to start a new game?");
+    if (startGame == true) {
+        restart();
+        console.log(getConfirmation);
+    }
+
+}
 function restart() {
     cards.forEach((card) => {
         card.classList.remove("flip");
         card.addEventListener("click", flipCard);
         resetBoard();
         moves = 0;
-        document.getElementById('nr-of-moves').innerHTML = moves;
+        document.getElementById("nr-of-moves").innerHTML = moves;
         matchCount = 0;
-
     });
 }
 /* Shuffle the cards for new game */
@@ -88,6 +94,5 @@ function restart() {
         card.style.order = ramdomPos;
     });
 })();
-
 
 cards.forEach((card) => card.addEventListener("click", flipCard));

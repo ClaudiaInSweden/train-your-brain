@@ -119,7 +119,7 @@ body>footer {
 }
 
 /* New game button */
-.start-new-game button {
+.moves-new-game button {
     background-color: #039475;
     color: #ffe4c4;
     border: 2px solid #ffffff;
@@ -133,7 +133,7 @@ body>footer {
     box-shadow: 0 6px 10px 0 #6a8d85;
 }
 
-.start-new-game button:hover {
+.moves-new-game button:hover {
     background-color: #ffe4c4;
     color: #039475;
 }
