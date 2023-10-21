@@ -35,7 +35,9 @@ End user goal: User can see how many moves it took to finalize the game.
 End business goal: The user restarts the game to reach a higher score.
 <hr>
 User story: As a user, I want to share this game to my Facebook friends.
+
 End user goal: User can easily share the game on Facebook.
+
 End business goal: The user shares the game to friens who share it to their friends, who in their turn share it with their friends, and so on. 
 
 <hr>
@@ -49,37 +51,44 @@ The game consists of one page only including a footer with a Facebook Share butt
 ### Game area
 
 Beneath the title and welcome text the user can see a total of 12 cards with paw-prints on them. 
+
 The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. If the cards don't match, the cards will be turned and the user may continue unflipping cards to find matches. 
+
 The board will lock when two cards have been unflipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
-When the user has found all 6 card pair, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, the windos will be closed and the user could start a new game by clicking the button "New Game". To avoid accidential restarts of the game, the user will need to confirm that a new game shall start. 
-When the user confirms, all cards will be flipped back so that the images are no longer visible and shuffled. 
+
+Each time the user flips a card, the moves counter under the memory game board will increase by 1.
+
+When the user has found all 6 card pair, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, the windos will be closed and the user could start a new game by clicking the button "New Game". To avoid accidential restarts, the user will need to confirm that a new game should start. 
+
+When the user confirms, all cards will be flipped back so that the images are no longer visible, they are shuffled, and the moves counter will be reset to 0.
 
 
-
-![Home Page](assets/readme-docs/home.webp)
+![Game Area](assets/readme-docs/game-area.webp)
 
 
 ### Footer
 
-The footer area contains links to relevant social media sites (Facebook, X (Twitter), and Instagram) to encourage users to keep connected. The icons include alternative text to provide relevant information when screen readers are used. All links open in a new tab to allow easy navigation for the user.
+The footer area contains a button that opens a news feed window on Facebook, showing a preview of the game and a link.
+
+![Share on Facebook](assets/images/facebook-share.webp)
 
 ## Future Features
 
 While the current version is fully functional, there are some ideas for future development:
 
-- Include map and directions
-- Add more information about the location
-- Add customer review connectivity (Tripadvisor, Google, or similar)
-- Add accommodation information & booking possibility
-- Add more service providers
-- Add live view & live weather conditions
+- Add more cards to increase difficulty level
+- Let user choose difficulty level
+- Let user choose different topics for the front cards
+- Add sound effect when the user wins a game
+- Add possibility for the user to save the score
 
 ## Typography and color scheme
 
-The color scheme was selected to represent the prominent colors in nature: brown and green, which also harmonize very well with the images used on the site. These colors are often associated with warmth, comfort, and steadiness and are therefore well suited for a site that aims to attract people who seek recreation and nature experiences.
+The color scheme was selected as it is calm and doesn't distract the user from the images that shall be matched. 
 
-Typography was chosen because of its soft and rounded letters that reflect a more calm or even old-fashioned style but are easy readable.
-Fonts Capriola and Merriweather from [Fontawesom](https://fontawesome.com/).
+Typography was chosen because of its playful character.
+
+Font used: "Indie Flower" from [Google Fonts](https://fonts.google.com/).
 
 ## Technology
 
@@ -88,6 +97,7 @@ Fonts Capriola and Merriweather from [Fontawesom](https://fontawesome.com/).
 - Image editor: SnagIt
 - Image converter: [Birme](<https://www.birme.net/>)
 - Favicon generator:[Favicon Generator](https://favicon.io/)
+- Image background remover: [Adobe Express](https://www.adobe.com/express/feature/image/remove-background)
   
 ## Testing
 
@@ -101,39 +111,21 @@ No errors were returned when passing through the [W3C Markup validator](https://
 
 No errors were found when passing through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) validator
 
+#### JavaScript
+
+No error were found when passing through [JSHint](<https://jshint.com/>) JavaScript Code Quality Tool, 
+but
+- Warning line 46: Expected an assignment or function call and instead saw an expression
+- One unused variable line 85: getConfirmation
+
 #### Google Chrome Lighthouse Reports
 
-These reports presents the results of Lighthouse testing to assess the performance, accessibility, best practices and SEO of [Visit Järbo](https://claudiainsweden.github.io/visit-jarbo/index.html).
+The report presents the result of Lighthouse testing to assess the performance, accessibility, best practices and SEO of [Train your brain](https://claudiainsweden.github.io/train-your-brain/).
 
 The tests were executed using the Google Chrome browser's DevTools.
-All pages score very high in all areas. Details for each page can be found by clicking the expand button.
-![Lighthouse score](assets/readme-docs/Lighthouse-score.webp)
+The site score very high in all areas. 
 
-<details>
-<summary>Lighthouse Report for page Home</summary>
-
-![Performance Home](assets/readme-docs/lighthouse_home.webp)
-</details>
-
-<details>
-<summary>Lighthouse Report for page Nature</summary>
-![Performance Nature](assets/readme-docs/lighthouse_nature.webp)
-</details>
-
-<details>
-<summary>Lighthouse Report for page Activities</summary>
-![Performance Activities](assets/readme-docs/lighthouse_activities.webp)
-</details>
-
-<details>
-<summary>Lighthouse Report for page Gallery</summary>
-![Performance Gallery](assets/readme-docs/lighthouse_gallery.webp)
-</details>
-
-<details>
-<summary>Lighthouse Report for page Contact us</summary>
-![Performance Contact us](assets/readme-docs/lighthouse_contact.webp)
-</details>
+![Lighthouse performance report](assets/readme-docs/lighthouse-analysis.webp)
 
 ### Manual Testing
 
@@ -193,57 +185,40 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - From the source section drop-down menu, select the Main Branch
 - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
   
-The live link can be found here - <https://claudiainsweden.github.io/visit-jarbo/>
+The live link can be found here - <https://claudiainsweden.github.io/train-your-brain//>
 
 ## Credits
 
 ### Content
 
-Idea, content and text are developed by myself.
-
-Inspiration for the layout from walkthrough project "Love Running" and default SharePoint page layouts.
-
-- Detailed information about what kind of fish there is to catch from [iFiske](https://www.ifiske.se/en/fishing-harnen-holmsjon-langsjon-m-fl-vatten.htm).
-- Information about percentage of forest in Sweden taken from [Visit Sweden](https://visitsweden.com/what-to-do/nature-outdoors/forest-bathing/).
-- Information about percentage of lakes in Sweden taken from [Skogskunskap/Forest knowledge](https://www.skogskunskap.se/hansyn/vatten-och-mark/om-hansyn-till-vatten-och-mark/vatten-i-sverige/)
-- Information about what animals can be seen at Wild Nordic taken from [Wild Nordic](https://wildnordic.se/en/home/)
-- Icons from [Font Awesome](https://fontawesome.com/)
-- Vector graphic for Favicon from [Vecteezy](https://www.vecteezy.com/)
-- Fonts from [Google Fonts](https://fonts.google.com/)
-- Images converted to webp with [Birme](https://www.birme.net/)
+Inspiration came from research on LinkedIn where former Code Institute students published their memory games from PP2 projects and because I myself like to play memory.
 
 ### Media
 
-All images showing "nature only" are photos taken by myself.
-Images including animals are from free sources as listed below:
+All images, icons and illustrations are from free sources as listed below:
 
-- Bear images: Photo by <a href="https://unsplash.com/@zmachacek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zdeněk Macháček</a> on <a href="https://unsplash.com/photos/Pt3asvL65Mg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Lynx image: Photo by <a href="https://unsplash.com/@hoops1972?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glen Hooper</a> on <a href="https://unsplash.com/photos/8LWtpfhGP4U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Fox image: Photo by <a href="https://unsplash.com/@vincentvanzalinge?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vincent van Zalinge</a> on <a href="https://unsplash.com/photos/cHhPjhOe8LA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Moose image: Photo by <a href="https://unsplash.com/@thejohnnyme?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nikola Johnny Mirkovic</a> on <a href="https://unsplash.com/photos/VFgxrL65zNI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Deer image: Photo by <a href="https://unsplash.com/@lassenystedtfoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lasse Nystedt</a> on <a href="https://unsplash.com/photos/FftpQKKGxOc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Emoji for for Favicon from [Twemoji](https://twemoji.twitter.com/)
+  
+  Licensing:
+<https://creativecommons.org/licenses/by/4.0/>
+- Favicon Converter from [Favicon](https://favicon.io/)
+- Fonts from [Google Fonts](https://fonts.google.com/)
+- Images converted to webp with [Birme](https://www.birme.net/)
+- Images for cards from [Macrovector on Freepik](https://www.freepik.com/free-vector/wild-home-animals-set_4005528.htm#query=animal&position=41&from_view=search&track=sph"
+- Paw image for back side of cards [Vectorstock](https://www.vectorstock.com/royalty-free-vector/a-footpath-trail-dog-prints-walking-randomly-vector-33704528)
+- Facebook Share Button from [Meta for Developers](https://developers.facebook.com/docs/plugins/share-button/)
 
 ### Code
 
-Initially, a lot of the code was copied from the Walkthrough project "Love Running" and changed during the project to fit this site.
+The following tutorials and websites were used for inspiration and guidance:
 
-- Copied Asterisk wildcard selector from the Walkthrough project "Love Running"
-- Header & navigation copied from the Walkthrough project "Love Running"
-- Footer copied from the Walkthrough project "Love Running"
-- Gallery copied from the Walkthrough project "Love Running"
-- Contact us page copied from the Walkthrough project "Love Running"
-- Index page copied from the Walkthrough project "Love Running"
-  
-#### Inspiration and tutorials used from
+- Memory game board: [freeCodeCamp.org](https://www.youtube.com/watch?v=ZniVgo8U7ek)
+- Shuffle function: [Jonathan Zakrisson](https://jonathan97-web.github.io/Eevees-evolution/)
+- Window: confirm() method: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
+
+as well as
 
   - [W3Schools](https://www.w3schools.com/)
   - [Mdn Web Docs](<https://developer.mozilla.org/en-US/>)
   - [Stack overflow](https://stackoverflow.com/)
-  - Code Institute Slack Channel
-    - Special thanks to Craig Hudson, my fellow student Niclas Hugdahl, and my mentor Rohit Sharma
 
-#### Templates and tutorial for creating the readme-file
-
-  - [bezebee - My First Project](https://github.com/bezebee/My-First-Project/blob/main/README.md)
-  - [Drupal Wiki](https://www.drupal.org/docs/develop/managing-a-drupalorg-theme-module-or-distribution-project/documenting-your-project/readmemd-template)
-  - [GitHub Docs](https://docs.github.com/en)
