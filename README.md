@@ -4,7 +4,7 @@
 
 ### Project Description
 
-[Train your brain](https://claudiainsweden.github.io/train-your-brain/) is a memory card game with 6 pairs of cards. The matching cards are to be found by flipping two cards and remember what cards are placed where to find matching pairs. When the user has found all matching pairs, the user won and can restart the game if wished.  
+[Train your brain](https://claudiainsweden.github.io/train-your-brain/) is a memory card game with 6 pairs of cards. The matching cards are to be found by flipping two cards and remember which cards are placed where to find matching pairs. When the user has found all matching pairs, the user won and can restart the game if wished.  
 
 ### Project Purpose
 
@@ -58,13 +58,11 @@ The board will lock when two cards have been unflipped to avoid that more than 2
 
 Each time the user flips a card, the moves counter under the memory game board will increase by 1.
 
-When the user has found all 6 card pair, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, the windos will be closed and the user could start a new game by clicking the button "New Game". To avoid accidential restarts, the user will need to confirm that a new game should start. 
+When the user has found all 6 card pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can start a new game by clicking the button "New Game". To avoid accidential restarts, the user will need to confirm that a new game should start. 
 
 When the user confirms, all cards will be flipped back so that the images are no longer visible, they are shuffled, and the moves counter will be reset to 0.
 
-
 ![Game Area](assets/readme-docs/game-area.webp)
-
 
 ### Footer
 
@@ -96,7 +94,7 @@ Font used: "Indie Flower" from [Google Fonts](https://fonts.google.com/).
 - Repository: GitHub
 - Image editor: SnagIt
 - Image converter: [Birme](<https://www.birme.net/>)
-- Favicon generator:[Favicon Generator](https://favicon.io/)
+- Favicon generator: [Favicon Generator](https://favicon.io/)
 - Image background remover: [Adobe Express](https://www.adobe.com/express/feature/image/remove-background)
   
 ## Testing
@@ -113,8 +111,9 @@ No errors were found when passing through the [W3C CSS Validator](https://jigsaw
 
 #### JavaScript
 
-No error were found when passing through [JSHint](<https://jshint.com/>) JavaScript Code Quality Tool, 
+No error were found when passing through [JSHint](<https://jshint.com/>) JavaScript Code Quality Tool,
 but
+
 - Warning line 46: Expected an assignment or function call and instead saw an expression
 - One unused variable line 85: getConfirmation
 
@@ -123,7 +122,7 @@ but
 The report presents the result of Lighthouse testing to assess the performance, accessibility, best practices and SEO of [Train your brain](https://claudiainsweden.github.io/train-your-brain/).
 
 The tests were executed using the Google Chrome browser's DevTools.
-The site score very high in all areas. 
+The site scores very high in all areas.
 
 ![Lighthouse performance report](assets/readme-docs/lighthouse-analysis.webp)
 
@@ -175,7 +174,7 @@ Functionality, links, layout, and responsiveness were tested on the following de
 
 ### Findings under testing
 
-- As users might want to receive information about more than one topic, checkboxes were initially used on the Contact us page. However, after some trials and Google research it turned out that this feature requires Javascript which was not part of the course so far.
+XXX
 
 ## Deployment
 
@@ -204,8 +203,8 @@ All images, icons and illustrations are from free sources as listed below:
 - Favicon Converter from [Favicon](https://favicon.io/)
 - Fonts from [Google Fonts](https://fonts.google.com/)
 - Images converted to webp with [Birme](https://www.birme.net/)
-- Images for cards from [Macrovector on Freepik](https://www.freepik.com/free-vector/wild-home-animals-set_4005528.htm#query=animal&position=41&from_view=search&track=sph"
-- Paw image for back side of cards [Vectorstock](https://www.vectorstock.com/royalty-free-vector/a-footpath-trail-dog-prints-walking-randomly-vector-33704528)
+- Images for cards from [Macrovector on Freepik](https://www.freepik.com/free-vector/wild-home-animals-set_4005528.htm)
+- Paw image for back side of cards from [Vectorstock](https://www.vectorstock.com/royalty-free-vector/a-footpath-trail-dog-prints-walking-randomly-vector-33704528)
 - Facebook Share Button from [Meta for Developers](https://developers.facebook.com/docs/plugins/share-button/)
 
 ### Code
@@ -218,7 +217,6 @@ The following tutorials and websites were used for inspiration and guidance:
 
 as well as
 
-  - [W3Schools](https://www.w3schools.com/)
-  - [Mdn Web Docs](<https://developer.mozilla.org/en-US/>)
-  - [Stack overflow](https://stackoverflow.com/)
-
+- [W3Schools](https://www.w3schools.com/)
+- [Mdn Web Docs](<https://developer.mozilla.org/en-US/>)
+- [Stack overflow](https://stackoverflow.com/)
