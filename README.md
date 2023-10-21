@@ -34,6 +34,7 @@ End user goal: User can see how many moves it took to finalize the game.
 
 End business goal: The user restarts the game to reach a higher score.
 <hr>
+
 User story: As a user, I want to share this game to my Facebook friends.
 
 End user goal: User can easily share the game on Facebook.
@@ -50,23 +51,23 @@ The game consists of one page only including a footer with a Facebook Share butt
 
 ### Game area
 
-Beneath the title and welcome text the user can see a total of 12 cards with paw-prints on them. 
+Beneath the title and welcome text the user can see a total of 12 cards with paw-prints on them.
 
-The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. If the cards don't match, the cards will be turned and the user may continue unflipping cards to find matches. 
+The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. If the cards don't match, the cards will be unflipped and the user may continue flipping cards to find matches.
 
 The board will lock when two cards have been unflipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
 
-Each time the user flips a card, the moves counter under the memory game board will increase by 1.
+Each time the user flips a card, the moves-counter under the memory game board will increase by 1.
 
 When the user has found all 6 card pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can start a new game by clicking the button "New Game". To avoid accidential restarts, the user will need to confirm that a new game should start. 
 
-When the user confirms, all cards will be flipped back so that the images are no longer visible, they are shuffled, and the moves counter will be reset to 0.
+When the user confirms, all cards will be flipped back so that the images are no longer visible, shuffled, and the moves-counter will be reset to 0.
 
 ![Game Area](assets/readme-docs/game-area.webp)
 
 ### Footer
 
-The footer area contains a button that opens a news feed window on Facebook, showing a preview of the game and a link.
+The footer area contains a Share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game.
 
 ![Share on Facebook](assets/images/facebook-share.webp)
 
@@ -84,7 +85,7 @@ While the current version is fully functional, there are some ideas for future d
 
 The color scheme was selected as it is calm and doesn't distract the user from the images that shall be matched. 
 
-Typography was chosen because of its playful character.
+Typography was selected due to its playful character.
 
 Font used: "Indie Flower" from [Google Fonts](https://fonts.google.com/).
 
@@ -94,7 +95,7 @@ Font used: "Indie Flower" from [Google Fonts](https://fonts.google.com/).
 - Repository: GitHub
 - Image editor: SnagIt
 - Image converter: [Birme](<https://www.birme.net/>)
-- Favicon generator: [Favicon Generator](https://favicon.io/)
+- Favicon generator: [Favicon](https://favicon.io/)
 - Image background remover: [Adobe Express](https://www.adobe.com/express/feature/image/remove-background)
   
 ## Testing
@@ -107,15 +108,11 @@ No errors were returned when passing through the [W3C Markup validator](https://
 
 #### CSS
 
-No errors were found when passing through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) validator
+No errors were found when passing through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) validator.
 
 #### JavaScript
 
-No error were found when passing through [JSHint](<https://jshint.com/>) JavaScript Code Quality Tool,
-but
-
-- Warning line 46: Expected an assignment or function call and instead saw an expression
-- One unused variable line 85: getConfirmation
+No error were found when passing through [JSHint](<https://jshint.com/>) JavaScript Code Quality Tool.
 
 #### Google Chrome Lighthouse Reports
 
@@ -129,31 +126,41 @@ The site scores very high in all areas.
 ### Manual Testing
 
 #### Features Testing
-TO BE UPDATED
 
 | Feature  | Action |Result|
 | ------------- | ------------- |-------------|
 |Cards|
 | Back card 1	  | Click  | Flips card|
 | Back card 2  | Click  | Flips card |
+|(assets/readme-docs/new-game-button.webp)|
 |Card 1 & 2   | Match  | Both cards remain flipped |
-|Front card 1  | Click when matched   | Flips but unflips right after |
-|Front card 2  | Click when matched  | Flips but unflips right after |
+|(assets/readme-docs/match.webp)|
+|Front card 1  | Click when already matched   | Flips but unflips right after |
+|Front card 2  | Click when already matched  | Flips but unflips right after |
 |Card 1 & 2| No match  | Both cards unflip after one second |
 |Back card 3| Click | Not possible to unflip more than two cards |
 | Number of moves |  | |
 | Number of moves-ccounter  | counts| Counter increments by one for each card flip|
+|(assets/readme-docs/moves-counter.webp)|
 | Number of moves-ccounter	| Click outside of game board |Does not increment the moves-counter |
 | New Game Button	|  ||
 | New Game Button	| Move mouse over button  |Changes background and font color of button|
+|(assets/readme-docs/new-game-button.webp)|
 | New Game Button	| Click  |Opens a confirmation alert window with the text "Are you sure you want to start a new game?"|
-| New Game Button |Click  | Changes background and font color of button
+|(assets/readme-docs/confirmation.webp)|
+| New Game Button |Click  | Changes background and font color of button|
+|(assets/readme-docs/new-game-button.webp)|
 | Confirmation alert  | Click on ok  | Resets and shuffles cards and moves-counter and restarts the game|
+|(assets/readme-docs/reset-game.webp)|
 | Confirmation alert  | Click on cancel  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
+|(assets/readme-docs/card-one-flipped.webp)|
 | Game won | 	| |
 | All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations" ou found all matches"|
+|(assets/readme-docs/congratulations.webp)|
 | Window alert  | Click on OK | Window closes, game board shows all matched cards and number of moves |
+|(assets/readme-docs/All-matched.webp)|
 |Footer  | Click on Share |Opens a Facebook news feed window with a preview of the game and a link to it |
+|(assets/readme-docs/facebook-share-small.webp)|
 
 ## Browser Testing
 TO BE UPDATED
