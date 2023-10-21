@@ -1,29 +1,19 @@
-/** 
- * Wait for the DOM to finish loading before running the game
-*/
-document.addEventListener('DOMContentLoaded', function() {
-    
-        });
+let cards = document.querySelectorAll(".memory-card");
+let cardIsFlipped = false;
+let firstCard, secondCard;
+let boardLock = false;
+let matchCount = 0;
+let moves = 0;
 /** 
  * Get cards, shuffle all cards on the board and add Event Listener 
  * to cards to listen for a user click 
 */
-const cards = document.querySelectorAll(".memory-card");
 function shuffleCards() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 12);
         card.style.order = randomPos;
     });
 }
-
-cards.forEach((card) => card.addEventListener("click", flipCard));
-
-
-let cardIsFlipped = false;
-let firstCard, secondCard;
-let boardLock = false;
-let matchCount = 0;
-let moves = 0;
 /**
  * Checks first if the game board is locked. 
  * If not, the card which has been clicked is the first card
@@ -49,14 +39,15 @@ function flipCard() {
 
     checkForMatch();
 }
-
 /** Checks if card 1 and card 2 match
- * If match cards Event Listener for click is removed
+ * If match, cards Event Listener for click is removed
  * and the cards will no longer be flipped
  */
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-    isMatch ? disableCards() : unflipCards();
+    if (isMatch) {
+        disableCards();
+    }  else { unflipCards();}
 }
 
 function disableCards() {
@@ -65,7 +56,8 @@ function disableCards() {
 
     resetBoard();
 /** Each match increments match counter
- * If match count reaches 6 a window alert will pop up
+ * If match count reaches 6 pairs, the game is over
+ * and a window alert will pop up
  */
     matchCount++;
     if (matchCount == 6) {
@@ -94,6 +86,8 @@ function resetBoard() {
  * When all cards are matched a window alert will pop-up
  * with congratulations and information that all matches
  * were found.
+ * The set Timeout will allow the last card to be flipped
+ * before the alert appears on screen
  */
 function showAlert() {
     let myText = "Congratulations!\nYou found all matches!";
@@ -111,11 +105,11 @@ function getConfirmation() {
     }
 }
 /** After confirmation to start new game 
- * cards will be unflipped, board will be reset
- * moves and match counter will be reset to 0
- * cards will be shuffled
+ * cards will be unflipped, board will be reset,
+ * moves and match counter will be reset to 0,
+ * cards will be shuffled,
  * set Timeout delays the card flipping by 0.5 seconds
- * so that the user doesn't see the shuffling
+ * so that the user doesn't see the shuffling and new positions
  */ 
 function restart() {
     cards.forEach((card) => {
@@ -129,4 +123,6 @@ function restart() {
         document.getElementById("nr-of-moves").innerHTML = moves;
         matchCount = 0;
     }, 500);
-};
+}
+
+    cards.forEach((card) => card.addEventListener("click", flipCard));

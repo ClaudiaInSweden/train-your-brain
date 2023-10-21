@@ -129,23 +129,24 @@ The site scores very high in all areas.
 ### Manual Testing
 
 #### Features Testing
+TO BE UPDATED
 
 | Feature  | Action |Result|
 | ------------- | ------------- |-------------|
-|Header|
-| Logo	  | Click  | Links to Home Page|
-| Navigation icon  | Click  | Opens Navigation menu |
-|Navigation bar  | Click on Home  | Opens Home page |
-|Navigation bar  | Click on Nature  | Opens Nature page |
-|Navigation bar  | Click on Activities | Opens Activities page |
-|Navigation bar| Click on Gallery  | Opens Gallery page |
-|Navigation bar| Click on Contact us| Opens Contact us page |
-|  |  | |
-| Footer  | | |
-| Social Media Section	| Click on Facebook icon |Opens Facebook in a new tab |
-| Social Media Section	| Click on X icon |Opens Twitter in a new tab |
-| Social Media Section	| Click on Instagram icon |Opens Instagram in a new tab |
-| Pages |  |
+|Cards|
+| Back card 1	  | Click  | Flips card|
+| Back card 2  | Click  | Flips card |
+|Card 1 & 2   | Match  | Both cards remain flipped |
+|Front card 1  | Click   | Flips but unflips right after |
+|Front card 2  | Click  | Flips but unflips right after |
+|Card 1 & 2| No match  | Both cards unflip after one second |
+|Back card 3| Click | Not possible to unflip more than two cards |
+| Number of moves |  | |
+| Number of moves ccounter  | counts| Counter increments by one for each card flip|
+| Number of moves ccounter	| Click anywhere on the page |Does not increment the moves counter |
+| New Game Button	|  ||
+| New Game Button	| Click  |Opens a confirmation alert window with the text "Are you sure you want to start a new game?"|
+| New Game Button |Click  | Changes background 
 | Activities page  | Click on Links in text  | Open links in new tab|
 | Contact us page  | Click Send  |Error message if field is empty|
 | Contact us page | Click on input field	|Green border and green input text |
@@ -154,6 +155,7 @@ The site scores very high in all areas.
 |Contact us page  | Click on Send |Redirects to confirmation page |
 
 ## Browser Testing
+TO BE UPDATED
 
 Functionality, links, layout, and responsiveness were tested with the following browsers without any issues:
 
@@ -163,6 +165,7 @@ Functionality, links, layout, and responsiveness were tested with the following 
 - Google Chrome Version 116.0.5845.188
   
 ## Device Testing
+TO BE UPDATED
 
 Functionality, links, layout, and responsiveness were tested on the following devices without any issues:
 
