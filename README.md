@@ -132,35 +132,24 @@ The site scores very high in all areas.
 |Cards|
 | Back card 1	  | Click  | Flips card|
 | Back card 2  | Click  | Flips card |
-|!(assets/readme-docs/new-game-button.webp)|
 |Card 1 & 2   | Match  | Both cards remain flipped |
-|!(assets/readme-docs/match.webp)|
 |Front card 1  | Click when already matched   | Flips but unflips right after |
 |Front card 2  | Click when already matched  | Flips but unflips right after |
 |Card 1 & 2| No match  | Both cards unflip after one second |
 |Back card 3| Click | Not possible to unflip more than two cards |
 | Number of moves |  | |
 | Number of moves-ccounter  | counts| Counter increments by one for each card flip|
-|!(assets/readme-docs/moves-counter.webp)|
 | Number of moves-ccounter	| Click outside of game board |Does not increment the moves-counter |
 | New Game Button	|  ||
 | New Game Button	| Move mouse over button  |Changes background and font color of button|
-|!(assets/readme-docs/new-game-button.webp)|
 | New Game Button	| Click  |Opens a confirmation alert window with the text "Are you sure you want to start a new game?"|
-|!(assets/readme-docs/confirmation.webp)|
 | New Game Button |Click  | Changes background and font color of button|
-|!(assets/readme-docs/new-game-button.webp)|
 | Confirmation alert  | Click on ok  | Resets and shuffles cards and moves-counter and restarts the game|
-|!(assets/readme-docs/reset-game.webp)|
 | Confirmation alert  | Click on cancel  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
-|!(assets/readme-docs/card-one-flipped.webp)|
 | Game won | 	| |
 | All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations" ou found all matches"|
-|!(assets/readme-docs/congratulations.webp)|
 | Window alert  | Click on OK | Window closes, game board shows all matched cards and number of moves |
-|!(assets/readme-docs/All-matched.webp)|
 |Footer  | Click on Share |Opens a Facebook news feed window with a preview of the game and a link to it |
-|!(assets/readme-docs/facebook-share-small.webp)|
 
 ## Browser Testing
 
