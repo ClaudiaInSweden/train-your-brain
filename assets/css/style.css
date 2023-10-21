@@ -21,6 +21,7 @@ body {
     align-items: center;
     position: relative;
 }
+
 main {
     min-height: 100vh;
     overflow: hidden;
@@ -38,10 +39,12 @@ body>footer {
     height: 70px;
     background-color: #035e4a
 }
+
 /* Hidden heading */
 .hidden-heading {
     display: none;
 }
+
 /* Main heading */
 #logo {
     display: flex;
@@ -49,6 +52,7 @@ body>footer {
     justify-content: center;
     padding-top: 10px;
 }
+
 hi {
     font-weight: 900;
 }

@@ -163,7 +163,6 @@ The site scores very high in all areas.
 |(assets/readme-docs/facebook-share-small.webp)|
 
 ## Browser Testing
-TO BE UPDATED
 
 Functionality, links, layout, and responsiveness were tested with the following browsers without any issues:
 
@@ -173,19 +172,17 @@ Functionality, links, layout, and responsiveness were tested with the following 
 - Google Chrome Version 116.0.5845.188
   
 ## Device Testing
-TO BE UPDATED
 
 Functionality, links, layout, and responsiveness were tested on the following devices without any issues:
 
 - Dell Laptop 14" / 1920px x 1080px
 - HP Laptop 17" / 1920px x 1080px
 - Dell Screen 24" / 1920px x 1080px
-- Samsung Galaxy 22S Ultra / 3088px x 1440px
-- iPhone 8 / 1334px × 750px
+- Samsung Galaxy S22 Ultra 
 
 ### Findings under testing
 
-XXX
+At the first round of lighthouse performance testing the sore for accessibility was only 91. After changing the green font and background color to a darker tone the contrast was sufficient to reach an accessibility score of 100.
 
 ## Deployment
 
