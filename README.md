@@ -137,22 +137,23 @@ TO BE UPDATED
 | Back card 1	  | Click  | Flips card|
 | Back card 2  | Click  | Flips card |
 |Card 1 & 2   | Match  | Both cards remain flipped |
-|Front card 1  | Click   | Flips but unflips right after |
-|Front card 2  | Click  | Flips but unflips right after |
+|Front card 1  | Click when matched   | Flips but unflips right after |
+|Front card 2  | Click when matched  | Flips but unflips right after |
 |Card 1 & 2| No match  | Both cards unflip after one second |
 |Back card 3| Click | Not possible to unflip more than two cards |
 | Number of moves |  | |
-| Number of moves ccounter  | counts| Counter increments by one for each card flip|
-| Number of moves ccounter	| Click anywhere on the page |Does not increment the moves counter |
+| Number of moves-ccounter  | counts| Counter increments by one for each card flip|
+| Number of moves-ccounter	| Click outside of game board |Does not increment the moves-counter |
 | New Game Button	|  ||
+| New Game Button	| Move mouse over button  |Changes background and font color of button|
 | New Game Button	| Click  |Opens a confirmation alert window with the text "Are you sure you want to start a new game?"|
-| New Game Button |Click  | Changes background 
-| Activities page  | Click on Links in text  | Open links in new tab|
-| Contact us page  | Click Send  |Error message if field is empty|
-| Contact us page | Click on input field	|Green border and green input text |
-| Contact us page  | Click on Email field and write text only |Error message to enter email address|
-| Contact us page  | Click on Reset |Empties all fields |
-|Contact us page  | Click on Send |Redirects to confirmation page |
+| New Game Button |Click  | Changes background and font color of button
+| Confirmation alert  | Click on ok  | Resets and shuffles cards and moves-counter and restarts the game|
+| Confirmation alert  | Click on cancel  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
+| Game won | 	| |
+| All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations" ou found all matches"|
+| Window alert  | Click on OK | Window closes, game board shows all matched cards and number of moves |
+|Footer  | Click on Share |Opens a Facebook news feed window with a preview of the game and a link to it |
 
 ## Browser Testing
 TO BE UPDATED
