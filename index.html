@@ -21,99 +21,34 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div id="logo">
-            <h1 class="train-your-brain">Train your Brain!</h1>
-        </div>
-    </header>
-    <main>
-        <!--Welcome section -->
-        <section class="welcome">
-            <h2 class="hidden-heading">Welcome to this memory card game</h2>
-            <div class="welcome-text">
-                <p>Flip two cards and find matching pairs!</p>
-            </div>
-        </section>
-        <!-- Memory card section -->
-        <section class="cards-container">
-            <h2 class="hidden-heading">Memory Cards</h2>
-            <!-- Card images and background -->
-            <div class="memory-card" data-framework="cat">
-                <img class="front-card" src="assets/images/cat.webp" alt="Front card showing a cat">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="chicken">
-                <img class="front-card" src="assets/images/chicken.webp" alt="Front card showing a chicken">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="dog">
-                <img class="front-card" src="assets/images/dog.webp" alt="Front card showing a dog">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="donkey">
-                <img class="front-card" src="assets/images/donkey.webp" alt="Front card showing a donkey">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="giraffe">
-                <img class="front-card" src="assets/images/giraffe.webp" alt="Front card showing a giraffe">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="panda">
-                <img class="front-card" src="assets/images/panda.webp" alt="Front card showing a panda">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="cat">
-                <img class="front-card" src="assets/images/cat.webp" alt="Front card showing a cat">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="chicken">
-                <img class="front-card" src="assets/images/chicken.webp" alt="Front card showing a chicken">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="dog">
-                <img class="front-card" src="assets/images/dog.webp" alt="Front card showing a dog">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="donkey">
-                <img class="front-card" src="assets/images/donkey.webp" alt="Front card showing a donkey">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="giraffe">
-                <img class="front-card" src="assets/images/giraffe.webp" alt="Front card showing a giraffe">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <div class="memory-card" data-framework="panda">
-                <img class="front-card" src="assets/images/panda.webp" alt="Front card showing a panda">
-                <img class="back-card" src="assets/images/paws.webp" alt="Back card">
-            </div>
-            <!-- Moves counter and new-game button section -->
-            <div class="moves-new-game">
-                <div id="count-moves">Number of moves:<span id="nr-of-moves">0</span>
-                </div>
-                <div><button onclick="getConfirmation()">New Game</button></div>
-            </div>
-        </section>
-    </main>
-    <!-- Footer section - Facebook share button -->
-    <footer>
-        <div id="social-media">
-            <div class="fb-share-button" data-href="https://claudiainsweden.github.io/train-your-brain/" data-layout=""
-                data-size="">
-                <a target="_blank"
-                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclaudiainsweden.github.io%2Ftrain-your-brain%2F&amp;src=sdkpreparse"
-                    class="fb-xfbml-parse-ignore" aria-label="Share this game on Facebook">Share</a>
-            </div>
-        </div>
-    </footer>
-    <!-- Link to JavaScript file -->
-    <!-- <script src="assets/js/script.js"></script> -->
-    <script src="assets/js/game.js"></script>
-    <!-- Font Awesome icons -->
-    <script src="https://kit.fontawesome.com/ad02dcfcb8.js" crossorigin="anonymous"></script>
-    <!-- Facebook share script -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"
-        nonce="jOsXbYlm"></script>
-</body>
+    <h1 class="train-your-brain">Train your Brain!</h1>
+    <p>Flip two cards and find matching pairs!</p>
 
+    <div id="count-moves">Number of moves:<span id="nr-of-moves">0</span></div>
+    <div id="level"><h3>Select difficulty level:</h3></div>
+    <div id="form">
+        <input type="radio" id="easyMode"
+        name="difficulty" value="easy">
+        <label for="easyMode">Easy</label>
+
+        <input type="radio" id="mediumMode"
+        name="difficulty" value="medium" checked="checked">
+        <label class="checked" for="mediumMode">Medium</label>
+
+        <input type="radio" id="hardMode"
+        name="difficulty" value="hard">
+        <label for="hardMode">Hard</label>
+        
+        <input type="radio" id="expertMode"
+        name="difficulty" value="expert">
+        <label for="hardMode">Expert</label>
+    </div>
+
+<div class="game-container"></div>
+
+<!-- <button id="restartButton">Start / Restart</button> -->
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
 </html>

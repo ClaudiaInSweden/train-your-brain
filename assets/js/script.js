@@ -1,5 +1,9 @@
-let cards = document.querySelectorAll(".memory-card");
-let cardIsFlipped = false;
+let cards = [];
+const gameContainer = document.querySelector(".game-container");
+const grid = document.getElementById("grid")
+const scoreElement = document.getElementById("score")
+const restartButton = document.getElementById("restartButton")
+
 let firstCard, secondCard;
 let boardLock = false;
 let matchCount = 0;
@@ -8,12 +12,42 @@ let moves = 0;
  * Get cards, shuffle all cards on the board and add Event Listener 
  * to cards to listen for a user click 
 */
+fetch("./data/cards.json")
+  .then((res) => res.json())
+  .then((data) => {
+    cards = [...data, ...data];
+    shuffleCards();
+    generateCards();
+  });
+
 function shuffleCards() {
-    cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
-        card.style.order = randomPos;
-    });
+  let currentIndex = cards.length,
+    randomIndex,
+    temporaryValue;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = cards[currentIndex];
+    cards[currentIndex] = cards[randomIndex];
+    cards[randomIndex] = temporaryValue;
+  }
 }
+
+function generateCards() {
+    for (let card of cards) {
+      const cardElement = document.createElement("div");
+      cardElement.classList.add("card");
+      cardElement.setAttribute("data-name", card.name);
+      cardElement.innerHTML = `
+        <div class="front">
+          <img class="front-image" src=${card.image} />
+        </div>
+        <div class="back"></div>
+      `;
+      gameContainer.appendChild(cardElement);
+      cardElement.addEventListener("click", flipCard);
+    }
+  }
 /**
  * Checks first if the game board is locked. 
  * If not, the card which has been clicked is the first card
@@ -23,20 +57,19 @@ function flipCard() {
     if (boardLock) return;
     if (this === firstCard) return;
 
-    this.classList.add("flip");
+    this.classList.add("flipped");
 /* Each flip increments moves counter and returns number to DOM */
-    moves++;
-    document.getElementById("nr-of-moves").innerHTML = moves;
+    // moves++;
+    // document.getElementById("nr-of-moves").innerHTML = moves;
 
-    if (!cardIsFlipped) {
-        cardIsFlipped = true;
+    if (!firstCard) {
         firstCard = this;
 
         return;
     }
 /* If the second card was flipped the match check starts */
     secondCard = this;
-
+    boardLock = true;
     checkForMatch();
 }
 /** Checks if card 1 and card 2 match
@@ -44,7 +77,7 @@ function flipCard() {
  * and the cards will no longer be flipped
  */
 function checkForMatch() {
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
     if (isMatch) {
         disableCards();
     }  else { unflipCards();}
@@ -55,24 +88,24 @@ function disableCards() {
     secondCard.removeEventListener("click", flipCard);
 
     resetBoard();
+}
 /** Each match increments match counter
  * If match count reaches 6 pairs, the game is over
  * and a window alert will pop up
  */
-    matchCount++;
-    if (matchCount == 6) {
-        showAlert();
-   }
-}
+//     matchCount++;
+//     if (matchCount == 6) {
+//         showAlert();
+//    }
+// }
 /** 
  * When there is no match, cards will be unflipped
  * after 1 second and board reset
  */ 
 function unflipCards() {
-    boardLock = true;
     setTimeout(() => {
-        firstCard.classList.remove("flip");
-        secondCard.classList.remove("flip");
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
 
         resetBoard();
     }, 1000);
