@@ -15,28 +15,18 @@ fetch("./data/cards.json")
    });
 
 
-// Get number of cards for game board from user difficulty level selection
-const selectCards = () => {
-  const level = document.getElementById('level').value; 
-  var moves = 0, difficulty
 
-  if(level == 'easy') difficulty = 3;
-  else if(level == 'medium') difficulty = 6;
-  else if(level == 'hard') difficulty = 8;
-  else if(level == 'expert') difficulty = 12;
-
-var cards2 = cards.slice();
-  
-  for(var i = (difficulty*4)/2;i>0;--i) {
-    var randomCard = cards2.splice(Math.floor(Math.random()*cards2.length), 1);
-
-    selectedCards.push(randomCard);
-    selectedCards.push(randomCard);
-  }
-}
+// $(function(){
+//   $( "#level" ).change(function() {
+//     var numberOfCards = $(this).val();
+//     selectCards(numberOfCards);
+//     });
+// });
 
 
-// Shuffle cards according to Fisher-Yates algorithm
+var numberOfCards = document.querySelector("#level").val;
+
+
 function shuffleCards() {
   let currentIndex = cards.length,
     randomIndex,
@@ -44,16 +34,15 @@ function shuffleCards() {
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
-    temporaryValue = selectedCards[currentIndex];
-    selectedCards[currentIndex] = selectedCards[randomIndex];
-    selectedCards[randomIndex] = temporaryValue;
+    temporaryValue = cards[currentIndex];
+    cards[currentIndex] = cards[randomIndex];
+    cards[randomIndex] = temporaryValue;
   }
 }
-
-
-// Generate game board
-function generateCards() {
-  for (let card of selectedCards) {
+function selectCards(numberOfCards) {
+ 
+	if (numberOfCards) {
+    for (var i = 0; i < numberOfCards; i++) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
@@ -65,8 +54,50 @@ function generateCards() {
     `;
     gameContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
+    }
   }
 }
+// function generateCards() {
+//   for (let card of selectedCards) {
+//     const cardElement = document.createElement("div");
+//     cardElement.classList.add("card");
+//     cardElement.setAttribute("data-name", card.name);
+//     cardElement.innerHTML = `
+//       <div class="front">
+//         <img class="front-image" src=${card.image} />
+//       </div>
+//       <div class="back"></div>
+//     `;
+//     gameContainer.appendChild(cardElement);
+//     cardElement.addEventListener("click", flipCard);
+//   }
+// }
+
+// Get number of cards for game board from user difficulty level selection
+// function selectCards() {
+//   const level = document.getElementById('level').value; 
+//   var moves = 0, difficulty
+
+//   if(level == 'easy') difficulty = 3;
+//   else if(level == 'medium') difficulty = 6;
+//   else if(level == 'hard') difficulty = 8;
+//   else if(level == 'expert') difficulty = 12;
+
+// var cards2 = cards.slice();
+  
+//   for(var i = (difficulty*4)/2;i>0;--i) {
+//     var randomCard = cards2.splice(Math.floor(Math.random()*cards2.length), 1);
+
+//     selectedCards.push(randomCard);
+//     selectedCards.push(randomCard);
+//   }
+// }
+
+// Shuffle cards according to Fisher-Yates algorithm
+
+
+// Generate game board
+
 
 
 // Checks first if the game board is locked. 
@@ -181,10 +212,10 @@ function restart() {
   setTimeout(() => {
     resetBoard();
     shuffleCards();
-    moves = 0;
+    
+    selectCards();
+    score = 0;
     document.getElementById("nr-of-moves").innerHTML = moves;
     matchCount = 0;
   }, 500);
-}
-
-  cards.forEach((card) => card.addEventListener("click", flipCard));
+  cards.forEach((card) => card.addEventListener("click", flipCard))};
