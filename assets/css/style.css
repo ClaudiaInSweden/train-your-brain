@@ -1,14 +1,23 @@
 body {
     color: #035e4a;
+    background-color: #ffe4c4;
     font-family: "Rancho", cursive;
     letter-spacing: 0.15rem;
     text-align: center;
     min-height: 100vh;
     min-width: 100vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     margin-top: 20px;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1rem;
 }
 
 .game-container {
@@ -71,33 +80,30 @@ h1 {
 }
 
 /* Style for difficulty selection */
-#form {
+#difficulty-level {
 	display: flex;
 	justify-content: center;
     width: 500px;
     margin: auto;
 }
 
-input {
-	display: none;
-}
-
-label {
-	flex: 1;
-	display: inline-block;
-	cursor: pointer;
-	text-align: center;
-    width: 150%;
-	margin: 10px 15px;
+option,
+#level, 
+button {
+	margin: 20px 15px;
 	padding: 5px;
 	background:  rgb(255, 228, 196);
 	color: #035e4a;
     border: 2px solid #035e4a;
     font-weight: 600;
+    font-size: 1.2rem;
     border-radius: 10px;
 }
-
-.checked {
+button {
+    width: 6em;
+    font-size: 1.2rem;
+}
+button:active {
 	background: #035e4a;
 	color: #ffe4c4;
     border: 2px solid #ffe4c4;
@@ -120,4 +126,17 @@ label {
 .new-game button:hover {
     background-color: #ffe4c4;
     color: #035e4a;
+}
+
+
+#social-media {
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffe4c4;
+    border-top: 2px solid #035e4a;
+
+}
+.footer {
+    margin-top: auto;
 }

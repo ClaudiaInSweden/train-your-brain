@@ -16,7 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <!-- Site title -->
+    <!-- Facebook Connection -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"
+        nonce="L23WhqAw"></script>
+    <!-- Title -->
     <title>Train your Brain!</title>
 </head>
 
@@ -24,31 +28,42 @@
     <h1 class="train-your-brain">Train your Brain!</h1>
     <p>Flip two cards and find matching pairs!</p>
 
-    <div id="count-moves">Number of moves:<span id="nr-of-moves">0</span></div>
-    <div id="level"><h3>Select difficulty level:</h3></div>
-    <div id="form">
-        <input type="radio" id="easyMode"
-        name="difficulty" value="easy">
-        <label for="easyMode">Easy</label>
+    <p>Number of moves:<span class="score"></span></p>
 
-        <input type="radio" id="mediumMode"
-        name="difficulty" value="medium" checked="checked">
-        <label class="checked" for="mediumMode">Medium</label>
+    <form onsubmit="return shuffleCards()">
+        <select id="level">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="expert">Expert</option>
+        </select>
+        <button type="submit" onclick="getConfirmation()">Start</button>
+    </form>
+<div class="wrapper"></div>
 
-        <input type="radio" id="hardMode"
-        name="difficulty" value="hard">
-        <label for="hardMode">Hard</label>
-        
-        <input type="radio" id="expertMode"
-        name="difficulty" value="expert">
-        <label for="hardMode">Expert</label>
+
+    <div class="game-container"></div>
+
     </div>
-
-<div class="game-container"></div>
-
-<!-- <button id="restartButton">Start / Restart</button> -->
+    <div class="push"></div>
 </div>
+    <!-- Footer section - Facebook share button -->
+    <footer class="footer">
+        <div id="social-media">
+            <div class="fb-share-button" data-href="https://claudiainsweden.github.io/train-your-brain/" data-layout=""
+                data-size=""><a target="_blank"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclaudiainsweden.github.io%2Ftrain-your-brain%2F&amp;src=sdkpreparse"
+                    class="fb-xfbml-parse-ignore">Share</a></div>
+        </div>
+    </footer>
 
-<script src="assets/js/script.js"></script>
+    <!-- Link to JavaScript file -->
+    <script src="assets/js/script.js"></script>
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/ad02dcfcb8.js" crossorigin="anonymous"></script>
+    <!-- Facebook share script -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"
+        nonce="jOsXbYlm"></script>
 </body>
+
 </html>
