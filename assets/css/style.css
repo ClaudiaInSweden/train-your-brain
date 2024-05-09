@@ -24,7 +24,8 @@ p {
     display: grid;
     justify-content: center;
     grid-gap: 10px;
-    grid-template-columns: repeat(6, 110px);
+    grid-template-columns: repeat(4, 110px);
+    grid-template-rows: repeat(12);
 }
 
 .card {

@@ -29,26 +29,26 @@
     <p>Flip two cards and find matching pairs!</p>
 
     <p>Number of moves:<span class="score"></span></p>
-
-    <form onsubmit="selectCards()">
-        <label for="NumOfCards">Select Level:</label>
+<div>
+    <label for="level">Select Level:</label>
         <select id="level">
-            <option value="3">Easy</option>
-            <option value="4">Medium</option>
-            <option value="6">Hard</option>
-            <option value="8">Expert</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="expert">Expert</option>
+            <option value="extreme">Extreme</option>
         </select>
-        <button type="submit" onclick="selectCards()">Start</button>
-        <!-- <button type="submit" onclick="getConfirmation()">Start</button> -->
-    </form>
-<div class="wrapper"></div>
-
-
-    <div class="game-container"></div>
-
-    </div>
-    <div class="push"></div>
+        <button id="start-game">Start</button>
 </div>
+
+    <div class="wrapper">
+        <div class="game-container">
+            
+        </div>
+        <div class="push">
+
+        </div>
+    </div>
     <!-- Footer section - Facebook share button -->
     <footer class="footer">
         <div id="social-media">
