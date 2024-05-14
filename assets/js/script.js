@@ -21,7 +21,7 @@ allCards = [
       "name": "kitty"
   },
   {
-      "image": "assets/chicken.webp",
+      "image": "assets/images/chicken.webp",
       "name": "chicken"
   },
   {
@@ -146,7 +146,7 @@ function selectLevel() {
   // Take only number of cards according to difficulty level
   let numberOfCards = allCards.slice(0, difficulty);
   // Use spread syntax to get a pair of each card
-  cards = [assets/.numberOfCards, assets/.numberOfCards]
+  cards = [...numberOfCards, ...numberOfCards]
   
   // console.log(numberOfCards)
   console.log(cards)
