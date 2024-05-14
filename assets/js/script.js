@@ -7,7 +7,108 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const gameContainer = document.querySelector('.game-container');
 document.getElementById('start-game').addEventListener('click', restart);
-allCards = [];
+allCards = [
+  {
+      "image": "../assets/images/bear.webp",
+      "name": "bear"
+  },
+  {
+      "image": "../assets/images/cat.webp",
+      "name": "cat"
+  },
+  {
+      "image": "../assets/images/kitty.webp",
+      "name": "kitty"
+  },
+  {
+      "image": "../assets/images/chicken.webp",
+      "name": "chicken"
+  },
+  {
+      "image": "../assets/images/hen.webp",
+      "name": "hen"
+  },
+  {
+      "image": "../assets/images/cow.webp",
+      "name": "cow"
+  },
+  {
+      "image": "../assets/images/deer.webp",
+      "name": "deer"
+  },
+  {
+      "image": "../assets/images/dog.webp",
+      "name": "dog"
+  },
+  {
+      "image": "../assets/images/donkey.webp",
+      "name": "donkey"
+  },
+  {
+      "image": "../assets/images/duck.webp",
+      "name": "duck"
+  },
+  {
+      "image": "../assets/images/elephant.webp",
+      "name": "elephant"
+  },
+  {
+      "image": "../assets/images/emu.webp",
+      "name": "emu"
+  },
+  {
+      "image": "../assets/images/fox.webp",
+      "name": "fox"
+  },
+  {
+      "image": "../assets/images/giraffe.webp",
+      "name": "giraffe"
+  },
+  {
+      "image": "../assets/images/goat.webp",
+      "name": "goat"
+  },
+  {
+      "image": "../assets/images/horse.webp",
+      "name": "horse"
+  },
+  {
+      "image": "../assets/images/lion.webp",
+      "name": "lion"
+  },
+  {
+      "image": "../assets/images/owl.webp",
+      "name": "owl"
+  },
+  {
+      "image": "../assets/images/panda.webp",
+      "name": "panda"
+  },
+  {
+      "image": "../assets/images/pig.webp",
+      "name": "pig"
+  },
+  {
+      "image": "../assets/images/rabbit.webp",
+      "name": "rabbit"
+  },
+  {
+      "image": "../assets/images/bunny.webp",
+      "name": "bunny"
+  },
+  {
+      "image": "../assets/images/sheep.webp",
+      "name": "sheep"
+  },
+  {
+      "image": "../assets/images/tiger.webp",
+      "name": "tiger"
+  },
+  {
+      "image": "../assets/images/wolve.webp",
+      "name": "wolve"
+  }
+];
 cards = [];
 let firstCard, secondCard;
 let boardLock = false;
@@ -20,14 +121,14 @@ let numberOfCards;
 
 
 // Get all cards from json file
-fetch("./data/cards.json")
-  .then((response) => response.json())
-  .then((data) => {
-    allCards = [...data];
-    selectLevel();
-    shuffleCards();
-    generateCards();
-  });
+// fetch("./data/cards.json")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     allCards = [...data];
+//     selectLevel();
+//     shuffleCards();
+//     generateCards();
+//   });
 
 
 // Get difficulty level from user selection and restart game

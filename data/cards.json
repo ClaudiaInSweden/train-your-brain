@@ -1,6 +1,6 @@
 [
     {
-        "image": "../assets/images/bear.webp",
+        "image": "../images/bear.webp",
         "name": "bear"
     },
     {
@@ -8,7 +8,7 @@
         "name": "cat"
     },
     {
-        "image": "../assets/images/kitty.webp",
+        "image": "../images/kitty.webp",
         "name": "kitty"
     },
     {
