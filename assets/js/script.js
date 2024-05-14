@@ -119,21 +119,17 @@ let difficulty;
 let numberOfCards;
 
 
+// Use Fisher-Yates algorithm to shuffle all cards for variation
+function shuffleAllCards() {
+  for (let i = 0; i < allCards.length; i++) {
+    let j = Math.floor(Math.random() * cards.length);
+    let temp = allCards[i];
+    allCards[i] = allCards[j];
+    allCards[j] = temp;
+  }
+}
 
-// Get all cards from json file
-// fetch("./data/cards.json")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     allCards = [assets/.data];
-//     selectLevel();
-//     shuffleCards();
-//     generateCards();
-//   });
-
-
-// Get difficulty level from user selection and restart game
-// document.getElementById('start-game').addEventListener('click', restart);
-
+// Get difficulty level from user selection
 function selectLevel() {
   let level = document.getElementById('level').value; 
 
@@ -148,12 +144,10 @@ function selectLevel() {
   // Use spread syntax to get a pair of each card
   cards = [...numberOfCards, ...numberOfCards]
   
-  // console.log(numberOfCards)
-  console.log(cards)
   shuffleCards();
 }
 
-
+// Use Fisher-Yates algorithm to shuffle cards
 function shuffleCards() {
   for (let i = 0; i < cards.length; i++) {
     let j = Math.floor(Math.random() * cards.length);
@@ -161,11 +155,10 @@ function shuffleCards() {
     cards[i] = cards[j];
     cards[j] = temp;
   }
-
-  console.log(cards)
 }
 
-
+// Create the game board with 4 columns and auto-generated 
+// number of rows
 function generateCards() {
   for (let card of cards) {
 
@@ -186,25 +179,19 @@ function generateCards() {
 
 // Checks first if the game board is locked. 
 // If not, the card which has been clicked is the first card
-//  and is flipped
+// and is flipped
 function flipCard() {
   if (boardLock) return;
   if (this === firstCard) return;
 
   this.classList.add("flipped");
 
-  //Each flip adds one move to the score and returns number to DOM */
-
-
   if (!firstCard) {
     firstCard = this;
 
     return;
   }
-  // If the second card was flipped the match check starts */
   secondCard = this;
-  // moves++;
-  // document.getElementById("nr-of-moves").innerHTML = moves;
   boardLock = true;
 
   checkForMatch();
@@ -214,6 +201,7 @@ function flipCard() {
 // Checks if card 1 and card 2 match
 // If match, cards Event Listener for click is removed
 // and the cards will no longer be flipped
+// Moves count increases with one
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
   moves++;
@@ -223,11 +211,12 @@ function checkForMatch() {
   } else { unflipCards(); }
 }
 
+// Number of moves are written to the DOM
 function displayMoves() {
   document.getElementById("nr-of-moves").innerHTML = moves
 }
 
-
+// Matched cards will no longer be clickable
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
@@ -235,7 +224,8 @@ function disableCards() {
   resetBoard();
 
   // Each match increments match counter
-  // If match count reaches 6 pairs, the game is over
+  // If match count reaches the number of pairs,
+  // specified in the difficulty level, the game is over
   // and a window alert will pop up
 
   matchCount++;
@@ -246,7 +236,7 @@ function disableCards() {
 
 
 // When there is no match, cards will be unflipped
-// after 1 second and board reset
+// after 1 second and the board reset
 // 
 function unflipCards() {
   setTimeout(() => {
@@ -257,8 +247,7 @@ function unflipCards() {
   }, 1000);
 }
 
-
-
+// 
 function resetBoard() {
   [cardIsFlipped, boardLock] = [false, false];
   [firstCard, secondCard] = [null, null];
@@ -272,7 +261,7 @@ function resetBoard() {
 // before the alert appears on screen
 
 function showAlert() {
-  let myText = "Congratulations!\nYou found all matches!";
+  let myText = "Congratulations!\nYou found all matches!\n\nSelect difficulty level and click on START to start a new game!";
   setTimeout(() => {
     alert(myText);
   }, 700);
@@ -296,16 +285,15 @@ function cleanBoard() {
 // }
 
 
-// After confirmation to start new game 
-// cards will be unflipped, board will be reset,
-// moves and match counter will be reset to 0,
-// cards will be shuffled,
-// set Timeout delays the card flipping by 0.5 seconds
-// so that the user doesn't see the shuffling and new positions
+// Click on Start, starts a new game, 
+// all cards will be shuffeled, number of card according to selected level
+// will be pick from the allCards array, copied to get pairs as well as
+// shuffled again, moves and match counter will be reset to 0
 
 function restart() {
   resetBoard();
   cleanBoard();
+  shuffleAllCards();
   selectLevel();
   shuffleCards();
   generateCards();

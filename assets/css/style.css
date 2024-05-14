@@ -1,7 +1,7 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
     box-sizing: border-box;
-    font-family: "Rancho", cursive;
+    font-family: "Hammersmith One", sans-serif;
     color: #035e4a;
 }
 
