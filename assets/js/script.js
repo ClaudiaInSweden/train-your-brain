@@ -1,17 +1,25 @@
+/** 
+ * Wait for the DOM to finish loading before running the game
+*/
+document.addEventListener('DOMContentLoaded', function() {
+    
+});
+
 const gameContainer = document.querySelector('.game-container');
+document.getElementById('start-game').addEventListener('click', restart);
 allCards = [];
 cards = [];
 let firstCard, secondCard;
 let boardLock = false;
 let matchCount = 0;
-let score = 0;
+let moves = 0;
 let level;
 let difficulty;
 let numberOfCards;
 
 
-document.querySelector(".score").textContent = score;
 
+// Get all cards from json file
 fetch("./data/cards.json")
   .then((response) => response.json())
   .then((data) => {
@@ -22,8 +30,8 @@ fetch("./data/cards.json")
   });
 
 
-// Get difficulty level from user selection
-document.getElementById('start-game').addEventListener('click', selectLevel);
+// Get difficulty level from user selection and restart game
+// document.getElementById('start-game').addEventListener('click', restart);
 
 function selectLevel() {
   let level = document.getElementById('level').value; 
@@ -39,8 +47,9 @@ function selectLevel() {
   // Use spread syntax to get a pair of each card
   cards = [...numberOfCards, ...numberOfCards]
   
-  console.log(numberOfCards)
+  // console.log(numberOfCards)
   console.log(cards)
+  shuffleCards();
 }
 
 
@@ -83,7 +92,7 @@ function flipCard() {
 
   this.classList.add("flipped");
 
-  //Each flip increments moves counter and returns number to DOM */
+  //Each flip adds one move to the score and returns number to DOM */
 
 
   if (!firstCard) {
@@ -93,8 +102,8 @@ function flipCard() {
   }
   // If the second card was flipped the match check starts */
   secondCard = this;
-  score++;
-  document.getElementById("score").innerHTML = score;
+  // moves++;
+  // document.getElementById("nr-of-moves").innerHTML = moves;
   boardLock = true;
 
   checkForMatch();
@@ -106,9 +115,15 @@ function flipCard() {
 // and the cards will no longer be flipped
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+  moves++;
+  displayMoves();
   if (isMatch) {
     disableCards();
   } else { unflipCards(); }
+}
+
+function displayMoves() {
+  document.getElementById("nr-of-moves").innerHTML = moves
 }
 
 
@@ -123,7 +138,7 @@ function disableCards() {
   // and a window alert will pop up
 
   matchCount++;
-  if (matchCount == 6) {
+  if (matchCount == difficulty) {
     showAlert();
   }
 }
@@ -142,6 +157,7 @@ function unflipCards() {
 }
 
 
+
 function resetBoard() {
   [cardIsFlipped, boardLock] = [false, false];
   [firstCard, secondCard] = [null, null];
@@ -154,12 +170,18 @@ function resetBoard() {
 // The set Timeout will allow the last card to be flipped
 // before the alert appears on screen
 
-// function showAlert() {
-//   let myText = "Congratulations!\nYou found all matches!";
-//   setTimeout(() => {
-//     alert(myText);
-//   }, 700);
-// }
+function showAlert() {
+  let myText = "Congratulations!\nYou found all matches!";
+  setTimeout(() => {
+    alert(myText);
+  }, 700);
+}
+ 
+// Cleans the game container and removes the cards before a
+// new game with new cards is displayed
+function cleanBoard() {
+  gameContainer.innerHTML = ''
+}
 
 
 // When user click on new game butten the user has to confirm 
@@ -182,8 +204,12 @@ function resetBoard() {
 
 function restart() {
   resetBoard();
+  cleanBoard();
+  selectLevel();
   shuffleCards();
   generateCards();
-  score = 0;
+  displayMoves();
+  cards = [];
+  moves = 0;
   matchCount = 0;
 }

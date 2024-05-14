@@ -25,7 +25,7 @@ p {
     justify-content: center;
     grid-gap: 10px;
     grid-template-columns: repeat(4, 110px);
-    grid-template-rows: repeat(12);
+    grid-template-rows: repeat(auto-fill, 110px);
 }
 
 .card {
