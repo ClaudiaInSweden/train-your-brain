@@ -9,103 +9,103 @@ const gameContainer = document.querySelector('.game-container');
 document.getElementById('start-game').addEventListener('click', restart);
 allCards = [
   {
-      "image": "../images/bear.webp",
+      "image": "assets/images/bear.webp",
       "name": "bear"
   },
   {
-      "image": "../images/cat.webp",
+      "image": "assets/images/cat.webp",
       "name": "cat"
   },
   {
-      "image": "../images/kitty.webp",
+      "image": "assets/images/kitty.webp",
       "name": "kitty"
   },
   {
-      "image": "..chicken.webp",
+      "image": "assets/chicken.webp",
       "name": "chicken"
   },
   {
-      "image": "..images/hen.webp",
+      "image": "assets/images/hen.webp",
       "name": "hen"
   },
   {
-      "image": "..images/cow.webp",
+      "image": "assets/images/cow.webp",
       "name": "cow"
   },
   {
-      "image": "..images/deer.webp",
+      "image": "assets/images/deer.webp",
       "name": "deer"
   },
   {
-      "image": "..images/dog.webp",
+      "image": "assets/images/dog.webp",
       "name": "dog"
   },
   {
-      "image": "..images/donkey.webp",
+      "image": "assets/images/donkey.webp",
       "name": "donkey"
   },
   {
-      "image": "..images/duck.webp",
+      "image": "assets/images/duck.webp",
       "name": "duck"
   },
   {
-      "image": "../images/elephant.webp",
+      "image": "assets/images/elephant.webp",
       "name": "elephant"
   },
   {
-      "image": "../images/emu.webp",
+      "image": "assets/images/emu.webp",
       "name": "emu"
   },
   {
-      "image": "../images/fox.webp",
+      "image": "assets/images/fox.webp",
       "name": "fox"
   },
   {
-      "image": "../images/giraffe.webp",
+      "image": "assets/images/giraffe.webp",
       "name": "giraffe"
   },
   {
-      "image": "../images/goat.webp",
+      "image": "assets/images/goat.webp",
       "name": "goat"
   },
   {
-      "image": "../images/horse.webp",
+      "image": "assets/images/horse.webp",
       "name": "horse"
   },
   {
-      "image": "../images/lion.webp",
+      "image": "assets/images/lion.webp",
       "name": "lion"
   },
   {
-      "image": "../images/owl.webp",
+      "image": "assets/images/owl.webp",
       "name": "owl"
   },
   {
-      "image": "../images/panda.webp",
+      "image": "assets/images/panda.webp",
       "name": "panda"
   },
   {
-      "image": "../images/pig.webp",
+      "image": "assets/images/pig.webp",
       "name": "pig"
   },
   {
-      "image": "../images/rabbit.webp",
+      "image": "assets/images/rabbit.webp",
       "name": "rabbit"
   },
   {
-      "image": "../images/bunny.webp",
+      "image": "assets/images/bunny.webp",
       "name": "bunny"
   },
   {
-      "image": "../images/sheep.webp",
+      "image": "assets/images/sheep.webp",
       "name": "sheep"
   },
   {
-      "image": "../images/tiger.webp",
+      "image": "assets/images/tiger.webp",
       "name": "tiger"
   },
   {
-      "image": "../images/wolve.webp",
+      "image": "assets/images/wolve.webp",
       "name": "wolve"
   }
 ];
@@ -124,7 +124,7 @@ let numberOfCards;
 // fetch("./data/cards.json")
 //   .then((response) => response.json())
 //   .then((data) => {
-//     allCards = [...data];
+//     allCards = [assets/.data];
 //     selectLevel();
 //     shuffleCards();
 //     generateCards();
@@ -146,7 +146,7 @@ function selectLevel() {
   // Take only number of cards according to difficulty level
   let numberOfCards = allCards.slice(0, difficulty);
   // Use spread syntax to get a pair of each card
-  cards = [...numberOfCards, ...numberOfCards]
+  cards = [assets/.numberOfCards, assets/.numberOfCards]
   
   // console.log(numberOfCards)
   console.log(cards)
