@@ -9,103 +9,103 @@ const gameContainer = document.querySelector('.game-container');
 document.getElementById('start-game').addEventListener('click', restart);
 allCards = [
   {
-      "image": "../assets/images/bear.webp",
+      "image": "../images/bear.webp",
       "name": "bear"
   },
   {
-      "image": "../assets/images/cat.webp",
+      "image": "../images/cat.webp",
       "name": "cat"
   },
   {
-      "image": "../assets/images/kitty.webp",
+      "image": "../images/kitty.webp",
       "name": "kitty"
   },
   {
-      "image": "../assets/images/chicken.webp",
+      "image": "..chicken.webp",
       "name": "chicken"
   },
   {
-      "image": "../assets/images/hen.webp",
+      "image": "..images/hen.webp",
       "name": "hen"
   },
   {
-      "image": "../assets/images/cow.webp",
+      "image": "..images/cow.webp",
       "name": "cow"
   },
   {
-      "image": "../assets/images/deer.webp",
+      "image": "..images/deer.webp",
       "name": "deer"
   },
   {
-      "image": "../assets/images/dog.webp",
+      "image": "..images/dog.webp",
       "name": "dog"
   },
   {
-      "image": "../assets/images/donkey.webp",
+      "image": "..images/donkey.webp",
       "name": "donkey"
   },
   {
-      "image": "../assets/images/duck.webp",
+      "image": "..images/duck.webp",
       "name": "duck"
   },
   {
-      "image": "../assets/images/elephant.webp",
+      "image": "../images/elephant.webp",
       "name": "elephant"
   },
   {
-      "image": "../assets/images/emu.webp",
+      "image": "../images/emu.webp",
       "name": "emu"
   },
   {
-      "image": "../assets/images/fox.webp",
+      "image": "../images/fox.webp",
       "name": "fox"
   },
   {
-      "image": "../assets/images/giraffe.webp",
+      "image": "../images/giraffe.webp",
       "name": "giraffe"
   },
   {
-      "image": "../assets/images/goat.webp",
+      "image": "../images/goat.webp",
       "name": "goat"
   },
   {
-      "image": "../assets/images/horse.webp",
+      "image": "../images/horse.webp",
       "name": "horse"
   },
   {
-      "image": "../assets/images/lion.webp",
+      "image": "../images/lion.webp",
       "name": "lion"
   },
   {
-      "image": "../assets/images/owl.webp",
+      "image": "../images/owl.webp",
       "name": "owl"
   },
   {
-      "image": "../assets/images/panda.webp",
+      "image": "../images/panda.webp",
       "name": "panda"
   },
   {
-      "image": "../assets/images/pig.webp",
+      "image": "../images/pig.webp",
       "name": "pig"
   },
   {
-      "image": "../assets/images/rabbit.webp",
+      "image": "../images/rabbit.webp",
       "name": "rabbit"
   },
   {
-      "image": "../assets/images/bunny.webp",
+      "image": "../images/bunny.webp",
       "name": "bunny"
   },
   {
-      "image": "../assets/images/sheep.webp",
+      "image": "../images/sheep.webp",
       "name": "sheep"
   },
   {
-      "image": "../assets/images/tiger.webp",
+      "image": "../images/tiger.webp",
       "name": "tiger"
   },
   {
-      "image": "../assets/images/wolve.webp",
+      "image": "../images/wolve.webp",
       "name": "wolve"
   }
 ];
