@@ -25,12 +25,15 @@
 </head>
 
 <body>
+<div class="text-area">
     <h1 class="train-your-brain">Train your Brain!</h1>
     <p>Flip two cards and find matching pairs!</p>
+
 <div class="count-moves">
-    <p>Number of moves:<span id="nr-of-moves">0</span></p>
+    <p>Number of moves: <span id="nr-of-moves">0</span></p>
 </div>
-<div>
+</div>
+<div class="selection">
     <label for="level">Select Level:</label>
         <select id="level">
             <option value="easy">Easy</option>
@@ -39,7 +42,9 @@
             <option value="expert">Expert</option>
             <option value="extreme">Extreme</option>
         </select>
-        <button id="start-game">Start</button>
+        <div>
+        <button class="restart" id="start-game" onclick="restart()">Start</button>
+        </div>
 </div>
 
     <div class="wrapper">

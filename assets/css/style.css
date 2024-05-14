@@ -1,25 +1,44 @@
-body {
-    color: #035e4a;
-    background-color: #ffe4c4;
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+    box-sizing: border-box;
     font-family: "Rancho", cursive;
-    letter-spacing: 0.15rem;
+    color: #035e4a;
+}
+
+body {
+    background-color: #ffe4c4;
     text-align: center;
     min-height: 100vh;
     min-width: 100vw;
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
+.text-area {
+    max-width: 100vw;
+    padding-left: 5px;
+    padding-right: 5px;
+    justify-content: center;
+    text-align: center;
+}
+.selection {
+    max-width: 100vw;
+}
 h1 {
     margin-top: 20px;
 }
 
 p {
     font-size: 1.3rem;
-    line-height: 1rem;
+    line-height: 1.3rem;
 }
 
+.wrapper {
+    max-width: 100vw;
+    justify-content: center;
+}
 .game-container {
     display: grid;
     justify-content: center;
@@ -76,44 +95,48 @@ p {
 }
 
 .front-image {
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    height: 100%;
 }
 
 /* Style for difficulty selection */
 #difficulty-level {
 	display: flex;
 	justify-content: center;
-    width: 500px;
+    width: 100vw;
     margin: auto;
 }
-
-option,
-#level, 
+label,
+option {
+    color: #035e4a;
+    background:  rgb(255, 228, 196);
+    font-family: "Rancho", cursive;
+    letter-spacing: normal;
+}
+select {
+    background: #035e4a;
+    color: #fff;
+    padding: 2px;
+    font-size: 1rem;
+}
 button {
-	margin: 20px 15px;
-	padding: 5px;
-	background:  rgb(255, 228, 196);
-	color: #035e4a;
+    margin: 20px 5px;
+	padding: 5px 10px;
+	background:  #035e4a;
+	color: #fff;
     border: 2px solid #035e4a;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
     border-radius: 10px;
 }
-button {
-    width: 6em;
-    font-size: 1.2rem;
+button:hover {
+	background: #ffe4c4;
+	color: #035e4a;
+    border: 2px solid #035e4a;
 }
-button:active {
-	background: #035e4a;
-	color: #ffe4c4;
-    border: 2px solid #ffe4c4;
-}
-
 #moves {
     margin-top: 20px;
 }
-
 #startBtn,
 #restartBbutton {
     background-color: #035e4a;
@@ -124,7 +147,7 @@ button:active {
     box-shadow: 0 6px 10px 0 #6a8d85;
 }
 
-.new-game button:hover {
+.restart:hover {
     background-color: #ffe4c4;
     color: #035e4a;
 }
@@ -140,4 +163,26 @@ button:active {
 }
 .footer {
     margin-top: auto;
+}
+
+@media screen and (max-width: 510px) {
+    .game-container {
+        width: 100vw;
+        grid-gap: 3px;
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(auto-fill, 70px);
+    }
+    .card {
+        height: 70px;
+        width: 70px;
+    }
+    .front-image {
+        width: 70px;
+        height: 70px;
+    }
+    .front,
+    .back {
+    width: 70px;
+    height: 70px;
+    } 
 }
