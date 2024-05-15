@@ -136,7 +136,7 @@ function selectLevel() {
   if(level == 'easy') difficulty = 4;
   else if(level == 'medium') difficulty = 8;
   else if(level == 'hard') difficulty = 12;
-  else if(level == 'expert') difficulty = 16;
+  else if(level == 'expert') difficulty = 18;
   else if(level == 'extreme') difficulty = 24;
 
   // Take only number of cards according to difficulty level
@@ -277,12 +277,24 @@ function cleanBoard() {
 // When user click on new game butten the user has to confirm 
 // that a new game should start 
 
-// function getConfirmation() {
-//   let startGame = confirm("Are you sure you want to start a new game?");
-//   if (startGame == true) {
-//     restart();
-//   }
-// }
+function getConfirmation() {
+  let startGame = confirm("Are you sure you want to start a new game?");
+  if (startGame == true) {
+    restart();
+  }
+}
+
+var x = window.matchMedia('(min-width: 768px)')
+
+function scaleGrid(x) {
+  if (x.matches && difficulty == 24 || x.matches && difficulty == 18) {
+    document.querySelector('.game-container').style.gridTemplateColumns = 'repeat(6, 110px)';
+  }
+}
+
+x.addEventListener('change', function() {
+  scaleGrid(x);
+})
 
 
 // Click on Start, starts a new game, 

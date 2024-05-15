@@ -110,7 +110,6 @@ label,
 option {
     color: #035e4a;
     background:  rgb(255, 228, 196);
-    font-family: "Rancho", cursive;
     letter-spacing: normal;
 }
 select {
@@ -184,5 +183,27 @@ button:hover {
     .back {
     width: 70px;
     height: 70px;
+    } 
+}
+
+@media screen and (min-width: 510px) {
+    .game-container {
+        width: 100vw;
+        grid-gap: 10px;
+        grid-template-columns: repeat(4, 110px);
+        grid-template-rows: repeat(auto-fill, 110px);
+    }
+    .card {
+        height: 110px;
+        width: 110px;
+    }
+    .front-image {
+        width: 110px;
+        height: 110px;
+    }
+    .front,
+    .back {
+    width: 110px;
+    height: 110px;
     } 
 }
