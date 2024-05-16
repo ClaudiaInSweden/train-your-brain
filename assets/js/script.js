@@ -1,12 +1,9 @@
-/** 
- * Wait for the DOM to finish loading before running the game
-*/
-document.addEventListener('DOMContentLoaded', function() {
+// Wait for the DOM to finish loading before running the game
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("start").addEventListener("click", getConfirmation);
 });
 
-// Global variables
-const gameContainer = document.querySelector('.game-container');
-document.getElementById('start-game').addEventListener('click', getConfirmation);
+// Card arrays
 allCards = [
   {
       "image": "assets/images/bear.webp",
@@ -133,22 +130,21 @@ cards = [
 {
     "image": "assets/images/cow.webp",
     "name": "cow"
-},
+}
 ];
+
+// Global variables
+const gameContainer = document.querySelector(".game-container");
 let firstCard, secondCard;
 let boardLock = false;
 let matchCount = 0;
 let moves = 0;
-// let level;
 let difficulty;
-// let numberOfCards;
-
 
 // Pre-populate game board with 12 cards/6 pairs
 selectLevel();
 shuffleCards();
 generateCards();
-
 
 // Use Fisher-Yates algorithm to shuffle all cards
 function shuffleAllCards() {
@@ -163,18 +159,18 @@ function shuffleAllCards() {
 // Get difficulty level from user selection
 // Difficulty level defines number of cards
 function selectLevel() {
-  let level = document.getElementById('level').value; 
+  let level = document.getElementById("level").value;
 
-  if(level == 'easy') difficulty = 6;
-  else if(level == 'medium') difficulty = 12;
-  else if(level == 'hard') difficulty = 18;
-  else if(level == 'expert') difficulty = 24;
+  if(level == "easy") difficulty = 6;
+  else if(level == "medium") difficulty = 12;
+  else if(level == "hard") difficulty = 18;
+  else if(level == "expert") difficulty = 24;
 
   // Take only number of cards according to difficulty level from all cards
   let numberOfCards = allCards.slice(0, difficulty);
   // Use spread syntax to duplicate cards, e.g. get a pair of each card
   cards = [...numberOfCards, ...numberOfCards];
-  
+
   shuffleCards();
 }
 
@@ -189,7 +185,7 @@ function shuffleCards() {
 }
 
 // Create the game board with 4 resp 6 columns depending on screen size
-// and auto-generated number of rows depending on number of cards
+// and auto-generate number of rows depending on number of cards
 function generateCards() {
   for (let card of cards) {
 
@@ -207,10 +203,10 @@ function generateCards() {
   }
 }
 
-
-// Checks first if the game board is locked. 
+// Checks first if the game board is locked.
 // If not, the card which has been clicked is the first card
-// and is flipped to see the image
+// and is flipped to see the image. When clicking on a
+// second card the board is locked to prevent further clicks
 function flipCard() {
   if (boardLock) return;
   if (this === firstCard) return;
@@ -228,7 +224,6 @@ function flipCard() {
   checkForMatch();
 }
 
-
 // Checks if card 1 and card 2 match
 // If match, the Event Listener for click is removed
 // and the cards will no longer be flipped and
@@ -243,12 +238,10 @@ function checkForMatch() {
   } else { unflipCards(); }
 }
 
-
 // Number of moves are updated on the page
 function displayMoves() {
   document.getElementById("nr-of-moves").innerHTML = moves;
 }
-
 
 // Matched cards will no longer be clickable
 function disableCards() {
@@ -268,9 +261,8 @@ function disableCards() {
   }
 }
 
-
 // When there is no match, cards will be unflipped
-// after 1 second and the board reset
+// after 1 second and the board unlocked
 function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove("flipped");
@@ -280,34 +272,29 @@ function unflipCards() {
   }, 1000);
 }
 
-
 // The game board will be unlocked and both cards will
-// be reset 
+// be reset
 function resetBoard() {
   boardLock = false;
   [firstCard, secondCard] = [null, null];
 }
 
-
 // When all cards are matched a window alert will pop-up
-// with congratulations and information that all matches
+// with congratulations and information that all pairs
 // were found.
 // The set Timeout will allow the last card to be flipped
 // before the alert appears on screen
-
 function showAlert() {
-  let myText = "Congratulations!\nYou found all matches!\n\nSelect difficulty level and click on START for a new game!";
+  let myText = "Congratulations!\nYou found all matches!\nWell done!";
   setTimeout(() => {
     alert(myText);
   }, 700);
 }
- 
 
-// Cleans the game board and removes all matched cards 
+// Cleans the game board and removes all matched cards
 function cleanBoard() {
-  gameContainer.innerHTML = '';
+  gameContainer.innerHTML = "";
 }
-
 
 // When user clicks on start butten the user has to confirm
 // that a new game should start to avoid faulty restarts
@@ -319,11 +306,10 @@ function getConfirmation() {
   }
 }
 
-
-// Click on Start, starts a new game,
-// all cards will be shuffled, number of cards according to selected level
-// will be picked from the allCards array, copied to get pairs.
-// Selected cards are shuffled again, moves and match counter will be reset to 0
+// Click on OK in the confirmation window, starts a new game.
+// All cards will be shuffled, number of cards according to selected level
+// will be picked from the allCards array and duplicated to get pairs.
+// Selected cards are shuffled again, moves and match counter are reset to 0
 function restart() {
   resetBoard();
   cleanBoard();
