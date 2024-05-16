@@ -195,7 +195,7 @@ function generateCards() {
     cardElement.setAttribute("alt", card.name);
     cardElement.innerHTML = `
       <div class="front">
-        <img class="front-image" src=${card.image} />
+        <img class="front-image" src=${card.image} alt=${card.name}>
       </div>
       <div class="back"></div>
     `;
@@ -303,6 +303,7 @@ function cleanBoard() {
 function getConfirmation() {
   let startGame = confirm("Are you sure you want to start a new game?");
   if (startGame == true) {
+    moves = 0;
     restart();
   }
 }
