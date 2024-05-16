@@ -10,7 +10,7 @@
 
 A memory game is a fun way to train concentration and focus, and is suitable for people of all ages. 
 
-![Responsive image example](assets/readme-docs/amiresponsive.webp)
+![Responsive image example](assets/readme-docs/amiresponsive.png)
 
 ## User stories
 
@@ -59,8 +59,13 @@ Underneath the title a very short instruction is visible as well as the moves co
 
 ### Game area
 
-The game board is pre-populated with 12 cards/6 pairs which corresponds to the easy level. This to enable the user to start playing directly.
+The game board is pre-populated with 12 cards/6 pairs which corresponds to the easy level. This to enable the user to start playing directly when visiting the page.
+
+![Prepopulated game board](assets/readme-docs/gameboard-easy.png)
+
 The cards are flipped so that the backside with paw-prints is visible. The front contains images of animals so that the game is also appealing to children.
+
+There are totally 25 cards available. Before a new game starts, all 25 cards are shuffled. Then, the number of cards according to the selected difficulty level is extracted, duplicated and shuffled once more before the game board is populated.
 
 On small screens the game boards consists of 4 columns, on large screens of 6 columns. 
 The game is designed for screens as small as 300px. Scrolling is unavoidable for medium to expert levels, however this does not compromise the playing experience.
@@ -86,11 +91,11 @@ Expert level consists of 48 cards/24 pairs
 The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. 
 If the cards don't match, the cards will be unflipped and the user may continue flipping cards to find matches.
 
-The board will lock when two cards have been unflipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
+The board will lock when two cards have been flipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
 
 Each time the user flips two cards, the moves-counter on top of the game board will increase by 1.
 
-When the user has found all matching pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can select a different level and start a new game by clicking the button "Start". 
+When the user has found all matching pairs, an alert will pop-up with the message "Congratulations! You found all matches! Well done!". When the user clicks OK in the alert window, it will be closed and the user can select a different level and start a new game by clicking the button "Start". 
 
 
 ![Alert Congratulations](assets/readme-docs/alert-congratulations.png)
@@ -99,7 +104,7 @@ To avoid accidential restarts during a game, the user will need to confirm that 
 
 ![Alert Start Game](assets/readme-docs/alert-newgame.png)
 
-When the user confirms, moves-counter will be reset to 0 and a new game board will be populated with the number of cards corresponding to the selection in the difficulty selection box.
+When the user confirms, the moves-counter will be reset to 0 and a new game board will be populated with the number of cards corresponding to the selection in the difficulty selection box.
 
 ![Game Board Easy](assets/readme-docs/gameboard-easy.png)
 ![Game Board Medium](assets/readme-docs/gameboard-medium.png)
@@ -108,7 +113,7 @@ When the user confirms, moves-counter will be reset to 0 and a new game board wi
 
 ### Footer
 
-The sticky footer area contains a Share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game in case the user is logged in to Facebook. If this is not the case, the Facebook Log-in page will be displayed. 
+The sticky footer area contains a Facebook share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game when the user is logged in to Facebook. If this is not the case, the Facebook Log-in page will be displayed. 
 
 ![Share on Facebook](assets/images/facebook-share.webp)
 
@@ -184,11 +189,12 @@ The site scores very high in all areas.
 | Cards 1 & 2| No match  | Both cards unflip after one second, image not visible |
 | Backside card 3 <br>when cards 1 & 2 are flipped <br>but do not match| Click | Not possible to flip more than two cards |
 | **Number of moves** |  | |
-| Moves-ccounter  | counts| Counter increments by one for each matching pair of cards|
+| Moves-ccounter  | Counter| Counter increments by one for each matching pair of cards|
 | Moves-ccounter	| Click outside of game board |Does not increment the moves-counter |
 | **Difficulty Level**	|  ||
-| Select box | Display | On page load the option Easy is selected |
+| Select box | Display | On first page load the option Easy is selected |
 | Select box | Click | Click into select box opens a dropdown menu with four options: Easy, Medium, Hard, Expert |
+| Select box | Click | Click on option Easy shows Easy as selected|
 | Select box | Click | Click on option Medium shows Medium as selected|
 | Select box | Click | Click on option Hard shows Hard as selected|
 | Select box | Click | Click on option Expert shows Expert as selected|
@@ -201,9 +207,9 @@ The site scores very high in all areas.
 | Cancel Button in Alert Window | Click  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
 | **Game won** | 	| |
 | All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations! You found all matches! Well done!"|
-| OK Button in Alert Window  | Click | Window closes, game board shows all matched cards and number of moves |
+| OK Button in Alert Window  | Click | Closes the alert window, game board shows all matched cards and number of moves |
 | **Footer**  |  | |
-| Facebook Icon % Share  | Click |Opens a Facebook news feed window with a preview of the game and a link to it |
+| Facebook Icon & Share  | Click |Opens a Facebook news feed window with a preview of the game and a link to it |
 
 ## Browser Testing
 
@@ -228,7 +234,7 @@ Functionality, links, layout, and responsiveness were tested on the following de
 
 2. When the game was near to be finished I realized that the game board would be empty on the first page load. As this is not a good user-experience, I decided to pre-populate the selected cards array with 6 cards.
 
-3. Originally I had 5 difficulty levels and wanted to use the matchMedia method to change the game grid from 4 to 6 columns for the two hardest levels on large screens. Unfortunately this did not work very well and the result was quite bumpy. To make the transition smooth, I reduced the number of difficulty levels to four and just took number of cards that can be divided both by 4 and 6 and added CSS media queries instead. 
+3. Originally I had 5 difficulty levels and wanted to use the matchMedia method to change the game grid from 4 to 6 columns for the two hardest levels on large screens. Unfortunately this did not work very well and the result was a quite bumpy layout change. To make the transition smooth, I reduced the number of difficulty levels to four and just took number of cards that can be divided both by 4 and 6 and added CSS media queries instead. 
 
 ## Deployment
 
@@ -238,7 +244,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - From the source section drop-down menu, select the Main Branch
 - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
   
-The live link can be found here - <https://claudiainsweden.github.io/train-your-brain//>
+The live link can be found here - <https://claudiainsweden.github.io/train-your-brain/>
 
 ## Credits
 
