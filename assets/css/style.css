@@ -75,6 +75,14 @@ button:hover {
     background-color: #ffe4c4;
     color: #035e4a;
 }
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover {
+	background: #ffe4c4;
+	color: #035e4a;
+}
 
 /* Game Board section */
 .wrapper {
