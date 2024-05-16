@@ -4,11 +4,11 @@
 
 ### Project Description
 
-[Train your brain](https://claudiainsweden.github.io/train-your-brain/) is a memory card game with 6 pairs of cards. The matching cards are to be found by flipping two cards and remember which cards are placed where to find matching pairs. When the user has found all matching pairs, the user won and can restart the game if wished.  
+[Train your brain](https://claudiainsweden.github.io/train-your-brain/) is a memory card game with four difficulty levels. The matching cards are to be found by flipping two cards and remember which cards are placed where to find matching pairs. When the user has found all matching pairs, the game is over.
 
 ### Project Purpose
 
-A memory game is a fun way to train concentration and focus and is suitable for people of all ages. 
+A memory game is a fun way to train concentration and focus, and is suitable for people of all ages. 
 
 ![Responsive image example](assets/readme-docs/amiresponsive.webp)
 
@@ -35,6 +35,13 @@ End user goal: User can see how many moves it took to finalize the game.
 End business goal: The user restarts the game to reach a higher score.
 <hr>
 
+User story: As a user, I want to be able to decide how hard the game should be.
+
+End user goal: User can select difficulty levels.
+
+End business goal: The user can select how many cards the game should include.
+<hr>
+
 User story: As a user, I want to share this game to my Facebook friends.
 
 End user goal: User can easily share the game on Facebook.
@@ -48,20 +55,31 @@ End business goal: The user shares the game to friens who share it to their frie
 ### Home
 
 The game consists of one page only including a footer with a Facebook Share button.
+Underneath the title a very short instruction is visible as well as the moves counter, a selection box and the start button.
 
 ### Game area
 
-Beneath the title and welcome text the user can see a total of 12 cards with paw-prints on them.
+The game board is pre-populated with 12 cards/6 pairs which corresponds to the easy level. This to enable the user to start playing directly.
+The cards are flipped so that the backside with paw-prints is visible. The front contains images of animals so that the game is also appealing to children.
 
-The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. If the cards don't match, the cards will be unflipped and the user may continue flipping cards to find matches.
+Easy level consists of 12 cards/6 pairs
+Medium level consists of 24 cards/12 pairs
+Hard level consists of 36 cards/18 pairs
+Expert level consists of 48 cards/24 pairs
+
+On small screens the game boards consists of 4 columns, on large screens of 6 columns. 
+The game is designed for screens as small as 300px. Scrolling is unavoidable for medium to expert levels, however this does not compromise the playing experience.
+
+The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. 
+If the cards don't match, the cards will be unflipped and the user may continue flipping cards to find matches.
 
 The board will lock when two cards have been unflipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
 
-Each time the user flips a card, the moves-counter under the memory game board will increase by 1.
+Each time the user flips two cards, the moves-counter on top of the game board will increase by 1.
 
-When the user has found all 6 card pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can start a new game by clicking the button "New Game". To avoid accidential restarts, the user will need to confirm that a new game should start. 
+When the user has found all matching pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can select a different level and start a new game by clicking the button "Start". To avoid accidential restarts during a game, the user will need to confirm that a new game should start. 
 
-When the user confirms, all cards will be flipped back so that the images are no longer visible, shuffled, and the moves-counter will be reset to 0.
+When the user confirms, moves-counter will be reset to 0 and a new game board will be populated with the number of cards corresponding to the value in the difficulty selection box.
 
 ![Game Area](assets/readme-docs/game-area.webp)
 
@@ -75,8 +93,6 @@ The footer area contains a Share-button that opens a news feed window on Faceboo
 
 While the current version is fully functional, there are some ideas for future development:
 
-- Add more cards to increase difficulty level
-- Let user choose difficulty level
 - Let user choose different topics for the front cards
 - Add sound effect when the user wins a game
 - Add possibility for the user to save the score
@@ -85,13 +101,13 @@ While the current version is fully functional, there are some ideas for future d
 
 The color scheme was selected as it is calm and doesn't distract the user from the images that shall be matched. 
 
-Typography was selected due to its playful character.
+Typography was selected due to its good readability on both small and large screens.
 
-Font used: "Indie Flower" from [Google Fonts](https://fonts.google.com/).
+Font used: "Hammersmith One" from [Google Fonts](https://fonts.google.com/).
 
 ## Technology
 
-- IDE: Code Anywhere
+- IDE: GitPod
 - Repository: GitHub
 - Image editor: SnagIt
 - Image converter: [Birme](<https://www.birme.net/>)

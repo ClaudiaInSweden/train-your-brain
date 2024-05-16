@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Global variables
 const gameContainer = document.querySelector('.game-container');
-document.getElementById('start-game').addEventListener('click', restart);
+document.getElementById('start-game').addEventListener('click', getConfirmation);
 allCards = [
   {
       "image": "assets/images/bear.webp",
@@ -139,9 +139,9 @@ let firstCard, secondCard;
 let boardLock = false;
 let matchCount = 0;
 let moves = 0;
-let level;
+// let level;
 let difficulty;
-let numberOfCards;
+// let numberOfCards;
 
 
 // Pre-populate game board with 12 cards/6 pairs
@@ -173,7 +173,7 @@ function selectLevel() {
   // Take only number of cards according to difficulty level from all cards
   let numberOfCards = allCards.slice(0, difficulty);
   // Use spread syntax to duplicate cards, e.g. get a pair of each card
-  cards = [...numberOfCards, ...numberOfCards]
+  cards = [...numberOfCards, ...numberOfCards];
   
   shuffleCards();
 }
@@ -246,7 +246,7 @@ function checkForMatch() {
 
 // Number of moves are updated on the page
 function displayMoves() {
-  document.getElementById("nr-of-moves").innerHTML = moves
+  document.getElementById("nr-of-moves").innerHTML = moves;
 }
 
 
@@ -284,7 +284,7 @@ function unflipCards() {
 // The game board will be unlocked and both cards will
 // be reset 
 function resetBoard() {
-  [cardIsFlipped, boardLock] = [false, false];
+  boardLock = false;
   [firstCard, secondCard] = [null, null];
 }
 
@@ -305,7 +305,7 @@ function showAlert() {
 
 // Cleans the game board and removes all matched cards 
 function cleanBoard() {
-  gameContainer.innerHTML = ''
+  gameContainer.innerHTML = '';
 }
 
 
