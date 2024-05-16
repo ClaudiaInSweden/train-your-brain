@@ -4,7 +4,7 @@
 
 ### Project Description
 
-[Train your brain](https://claudiainsweden.github.io/train-your-brain/) is a memory card game with four difficulty levels. The matching cards are to be found by flipping two cards and remember which cards are placed where to find matching pairs. When the user has found all matching pairs, the game is over.
+[Train your brain](https://claudiainsweden.github.io/train-your-brain/) is a memory card game with four difficulty levels. The matching cards are to be found by flipping two cards and remember which cards are placed where to find matching pairs. Matched pairs will remain visible. When the user has found all matching pairs, the game is over.
 
 ### Project Purpose
 
@@ -55,20 +55,33 @@ End business goal: The user shares the game to friens who share it to their frie
 ### Home
 
 The game consists of one page only including a footer with a Facebook Share button.
-Underneath the title a very short instruction is visible as well as the moves counter, a selection box and the start button.
+Underneath the title a very short instruction is visible as well as the moves counter, a difficulty selection box and the start button.
 
 ### Game area
 
 The game board is pre-populated with 12 cards/6 pairs which corresponds to the easy level. This to enable the user to start playing directly.
 The cards are flipped so that the backside with paw-prints is visible. The front contains images of animals so that the game is also appealing to children.
 
-Easy level consists of 12 cards/6 pairs
-Medium level consists of 24 cards/12 pairs
-Hard level consists of 36 cards/18 pairs
-Expert level consists of 48 cards/24 pairs
-
 On small screens the game boards consists of 4 columns, on large screens of 6 columns. 
 The game is designed for screens as small as 300px. Scrolling is unavoidable for medium to expert levels, however this does not compromise the playing experience.
+
+Easy level consists of 12 cards/6 pairs
+
+![Easy level](assets/readme-docs/game-won-easy.png)
+
+Medium level consists of 24 cards/12 pairs
+
+![Medium level](assets/readme-docs/game-won-medium.png)
+
+Hard level consists of 36 cards/18 pairs
+
+![Hard level](assets/readme-docs/game-won-hard.png)
+
+Expert level consists of 48 cards/24 pairs
+
+![Expert level](assets/readme-docs/game-won-expert.png)
+
+
 
 The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. 
 If the cards don't match, the cards will be unflipped and the user may continue flipping cards to find matches.
@@ -77,15 +90,25 @@ The board will lock when two cards have been unflipped to avoid that more than 2
 
 Each time the user flips two cards, the moves-counter on top of the game board will increase by 1.
 
-When the user has found all matching pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can select a different level and start a new game by clicking the button "Start". To avoid accidential restarts during a game, the user will need to confirm that a new game should start. 
+When the user has found all matching pairs, an alert will pop-up with the message "Congratulations" You found all matches!". When the user clicks OK in the alert window, it will be closed and the user can select a different level and start a new game by clicking the button "Start". 
 
-When the user confirms, moves-counter will be reset to 0 and a new game board will be populated with the number of cards corresponding to the value in the difficulty selection box.
 
-![Game Area](assets/readme-docs/game-area.webp)
+![Alert Congratulations](assets/readme-docs/alert-congratulations.png)
+
+To avoid accidential restarts during a game, the user will need to confirm that a new game should start. 
+
+![Alert Start Game](assets/readme-docs/alert-newgame.png)
+
+When the user confirms, moves-counter will be reset to 0 and a new game board will be populated with the number of cards corresponding to the selection in the difficulty selection box.
+
+![Game Board Easy](assets/readme-docs/gameboard-easy.png)
+![Game Board Medium](assets/readme-docs/gameboard-medium.png)
+![Game Board Hard](assets/readme-docs/gameboard-hard.png)
+![Game Board Expert](assets/readme-docs/gameboard-expert.png)
 
 ### Footer
 
-The footer area contains a Share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game.
+The sticky footer area contains a Share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game in case the user is logged in to Facebook. If this is not the case, the Facebook Log-in page will be displayed. 
 
 ![Share on Facebook](assets/images/facebook-share.webp)
 
@@ -152,36 +175,44 @@ The site scores very high in all areas.
 
 | Feature  | Action |Result|
 | ------------- | ------------- |-------------|
-|Cards|
-| Back card 1	  | Click  | Flips card|
-| Back card 2  | Click  | Flips card |
-|Card 1 & 2   | Match  | Both cards remain flipped |
-|Front card 1  | Click when already matched   | Flips but unflips right after |
-|Front card 2  | Click when already matched  | Flips but unflips right after |
-|Card 1 & 2| No match  | Both cards unflip after one second |
-|Back card 3| Click | Not possible to unflip more than two cards |
-| Number of moves |  | |
-| Number of moves-ccounter  | counts| Counter increments by one for each card flip|
-| Number of moves-ccounter	| Click outside of game board |Does not increment the moves-counter |
-| New Game Button	|  ||
-| New Game Button	| Move mouse over button  |Changes background and font color of button|
-| New Game Button	| Click  |Opens a confirmation alert window with the text "Are you sure you want to start a new game?"|
-| New Game Button |Click  | Changes background and font color of button|
-| Confirmation alert  | Click on ok  | Resets and shuffles cards and moves-counter and restarts the game|
-| Confirmation alert  | Click on cancel  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
-| Game won | 	| |
-| All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations" ou found all matches"|
-| Window alert  | Click on OK | Window closes, game board shows all matched cards and number of moves |
-|Footer  | Click on Share |Opens a Facebook news feed window with a preview of the game and a link to it |
+|**Cards**|
+| Backside card 1	  | Click  | Flips card, image visible|
+| Backside card 2  | Click  | Flips card, image visible |
+| Cards 1 & 2   | Match  | Both cards remain flipped with image visible |
+| Card 1  | Click when already matched   | Unflips but flips right after, image visible |
+| Card 2  | Click when already matched  | Unflips but flips right after, image visible |
+| Cards 1 & 2| No match  | Both cards unflip after one second, image not visible |
+| Backside card 3 <br>when cards 1 & 2 are flipped <br>but do not match| Click | Not possible to flip more than two cards |
+| **Number of moves** |  | |
+| Moves-ccounter  | counts| Counter increments by one for each matching pair of cards|
+| Moves-ccounter	| Click outside of game board |Does not increment the moves-counter |
+| **Difficulty Level**	|  ||
+| Select box | Display | On page load the option Easy is selected |
+| Select box | Click | Click into select box opens a dropdown menu with four options: Easy, Medium, Hard, Expert |
+| Select box | Click | Click on option Medium shows Medium as selected|
+| Select box | Click | Click on option Hard shows Hard as selected|
+| Select box | Click | Click on option Expert shows Expert as selected|
+| Start Button | Click | Displays a windows alert asking to confirm that a new game shall start |
+| OK Button in Alert Window	| Click | Depending on the selected difficulty level and screen size the game board is populated as follows: |
+| 	| Level Easy | Screen size < 992px: 4 columns, 3 rows <br>Screens size > 992px: 6 columns, 2 rows |
+| 	| Level Medium | Screen size < 992px: 4 columns, 6 rows <br>Screens size > 992px: 6 columns, 4 rows |
+| 	| Level Hard | Screen size < 992px: 4 columns, 9 rows <br>Screens size > 992px: 6 columns, 6 rows |
+| 	| Level Expert | Screen size < 992px: 4 columns, 12 rows <br>Screens size > 992px: 6 columns, 8 rows |
+| Cancel Button in Alert Window | Click  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
+| **Game won** | 	| |
+| All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations! You found all matches! Well done!"|
+| OK Button in Alert Window  | Click | Window closes, game board shows all matched cards and number of moves |
+| **Footer**  |  | |
+| Facebook Icon % Share  | Click |Opens a Facebook news feed window with a preview of the game and a link to it |
 
 ## Browser Testing
 
 Functionality, links, layout, and responsiveness were tested with the following browsers without any issues:
 
-- Microsoft Edge Version 117.0.2045.47
-- Firefox Version 118.0.1
+- Microsoft Edge Version 124.0.2478.105
+- Firefox Version 124.0.2
 - Brave Version 1.65.123
-- Google Chrome Version 116.0.5845.188
+- Google Chrome Version 124.0.6367.91
   
 ## Device Testing
 
