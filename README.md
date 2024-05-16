@@ -122,13 +122,20 @@ Font used: "Hammersmith One" from [Google Fonts](https://fonts.google.com/).
 
 No errors were returned when passing through the [W3C Markup validator](https://validator.w3.org/).
 
+![HTML Validation](assets/readme-docs/html-validation.png)
+
 #### CSS
 
 No errors were found when passing through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) validator.
 
+![CSS Validation](assets/readme-docs/css-validation.png)
+
 #### JavaScript
 
 No error were found when passing through [JSHint](<https://jshint.com/>) JavaScript Code Quality Tool.
+However, the two card arrays were marked as undefined variables, see screenshot.
+
+![JSHint Validation](assets/readme-docs/jshint.png)
 
 #### Google Chrome Lighthouse Reports
 
@@ -137,7 +144,7 @@ The report presents the result of Lighthouse testing to assess the performance, 
 The tests were executed using the Google Chrome browser's DevTools.
 The site scores very high in all areas.
 
-![Lighthouse performance report](assets/readme-docs/lighthouse-analysis.webp)
+![Lighthouse performance report](assets/readme-docs/lighthouse-analysis.png)
 
 ### Manual Testing
 
@@ -173,21 +180,24 @@ Functionality, links, layout, and responsiveness were tested with the following 
 
 - Microsoft Edge Version 117.0.2045.47
 - Firefox Version 118.0.1
-- Brave Version 1.58.135
+- Brave Version 1.65.123
 - Google Chrome Version 116.0.5845.188
   
 ## Device Testing
 
 Functionality, links, layout, and responsiveness were tested on the following devices without any issues:
 
-- Dell Laptop 14" / 1920px x 1080px
-- HP Laptop 17" / 1920px x 1080px
+- Lenovo Legion Slim 7 / 2560px x 1600px
 - Dell Screen 24" / 1920px x 1080px
 - Samsung Galaxy S22 Ultra 
 
-### Findings under testing
+### Bugs
 
-At the first round of lighthouse performance testing the sore for accessibility was only 91. After changing the green font and background color to a darker tone the contrast was sufficient to reach an accessibility score of 100.
+1. Originally I used a json file to load the images into the game. This worked perfectly fine during development. However, the images would not load on the live site. I tried to find a solution but according to some posts on Stack Overflow you would need to load the json file from an external server. To keep it simple I just added the images to an array.
+
+2. When the game was near to be finished I realized that the game board would be empty on the first page load. As this is not a good user-experience, I decided to pre-populate the selected cards array with 6 cards.
+
+3. Originally I had 5 difficulty levels and wanted to use the matchMedia method to change the game grid from 4 to 6 columns for the two hardest levels on large screens. Unfortunately this did not work very well and the result was quite bumpy. To make the transition smooth, I reduced the number of difficulty levels to four and just took number of cards that can be divided both by 4 and 6 and added CSS media queries instead. 
 
 ## Deployment
 
@@ -225,11 +235,13 @@ All images, icons and illustrations are from free sources as listed below:
 The following tutorials and websites were used for inspiration and guidance:
 
 - Memory game board: [freeCodeCamp.org](https://www.youtube.com/watch?v=ZniVgo8U7ek)
-- Shuffle function: [Jonathan Zakrisson](https://jonathan97-web.github.io/Eevees-evolution/)
 - Window: confirm() method: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
+- Difficulty level: [Memory Master](https://natashary.github.io/memory-game/)
 
 as well as
 
 - [W3Schools](https://www.w3schools.com/)
 - [Mdn Web Docs](<https://developer.mozilla.org/en-US/>)
 - [Stack overflow](https://stackoverflow.com/)
+- [Medium](https://medium.com/)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/)
