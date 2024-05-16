@@ -186,7 +186,7 @@ button:hover {
     } 
 }
 
-@media screen and (min-width: 510px) {
+@media screen and (min-width: 768px) {
     .game-container {
         width: 100vw;
         grid-gap: 10px;
@@ -206,4 +206,11 @@ button:hover {
     width: 110px;
     height: 110px;
     } 
+}
+
+@media screen and (min-width: 992px) {
+    .game-container {
+        grid-template-columns: repeat(6, 110px);
+        grid-template-rows: repeat(auto-fill, 110px);
+    }
 }

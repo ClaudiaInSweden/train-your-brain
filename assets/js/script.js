@@ -133,11 +133,10 @@ function shuffleAllCards() {
 function selectLevel() {
   let level = document.getElementById('level').value; 
 
-  if(level == 'easy') difficulty = 4;
-  else if(level == 'medium') difficulty = 8;
-  else if(level == 'hard') difficulty = 12;
-  else if(level == 'expert') difficulty = 18;
-  else if(level == 'extreme') difficulty = 24;
+  if(level == 'easy') difficulty = 6;
+  else if(level == 'medium') difficulty = 12;
+  else if(level == 'hard') difficulty = 18;
+  else if(level == 'expert') difficulty = 24;
 
   // Take only number of cards according to difficulty level
   let numberOfCards = allCards.slice(0, difficulty);
@@ -283,18 +282,6 @@ function getConfirmation() {
     restart();
   }
 }
-
-var x = window.matchMedia('(min-width: 768px)')
-
-function scaleGrid(x) {
-  if (x.matches && difficulty == 24 || x.matches && difficulty == 18) {
-    document.querySelector('.game-container').style.gridTemplateColumns = 'repeat(6, 110px)';
-  }
-}
-
-x.addEventListener('change', function() {
-  scaleGrid(x);
-})
 
 
 // Click on Start, starts a new game, 
