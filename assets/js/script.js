@@ -301,7 +301,7 @@ function showAlert() {
   setTimeout(() => {
     const dialog = document.querySelector("#youwon");
     const closeBtn = document.querySelector("#close");
-    dialog.show();
+    dialog.showModal();
     
     closeBtn.addEventListener("click", () => {
     dialog.close();
@@ -328,7 +328,7 @@ function getConfirmation() {
 const dialog = document.querySelector("#newgame");
 const cancelBtn = document.querySelector("#cancel");
 const confirmBtn = document.querySelector("#confirm");
-dialog.show();
+dialog.showModal();
 
 cancelBtn.addEventListener("click", () => {
 dialog.close();
