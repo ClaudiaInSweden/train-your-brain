@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("start").addEventListener("click", getConfirmation);
 });
 
+// Inspiration from JavaScriptAcademy tutorial on Youtube
+// https://youtu.be/xWdkt6KSirw?si=n_b2NeffyAzpyxQp
+
 // Card arrays
 allCards = [
   {
@@ -158,6 +161,8 @@ function shuffleAllCards() {
 
 // Get difficulty level from user selection
 // Difficulty level defines number of cards
+// Inspiration from Memory Master game from CI student Natasha_5P
+// https://natashary.github.io/memory-game/
 function selectLevel() {
   let level = document.getElementById("level").value;
 
@@ -186,6 +191,7 @@ function shuffleCards() {
 
 // Create the game board with 4 resp 6 columns depending on screen size
 // and auto-generate number of rows depending on number of cards
+// Add alt-attribute to images for improved accessibility
 function generateCards() {
   for (let card of cards) {
 
@@ -255,7 +261,6 @@ function disableCards() {
   // If match count reaches the number of pairs,
   // specified in the difficulty level, the game is over
   // and a window alert will pop up
-
   matchCount++;
   if (matchCount == difficulty) {
     showAlert();

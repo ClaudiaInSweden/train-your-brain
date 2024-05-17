@@ -117,21 +117,51 @@ The sticky footer area contains a Facebook share-button that opens a news feed w
 
 ![Share on Facebook](assets/images/facebook-share.webp)
 
+### 404
+
+A customized 404 page with a link to the game was created to avoid frustrated users when something's going wrong.
+
+![404 Page](assets/readme-docs/404.gif)
+
 ## Future Features
 
 While the current version is fully functional, there are some ideas for future development:
 
 - Let user choose different topics for the front cards
+- Add instructions
 - Add sound effect when the user wins a game
 - Add possibility for the user to save the score
 
-## Typography and color scheme
+## Color scheme
 
 The color scheme was selected as it is calm and doesn't distract the user from the images that shall be matched. 
 
-Typography was selected due to its good readability on both small and large screens.
+![Color Scheme](assets/readme-docs/color-scheme.png)
 
-Font used: "Hammersmith One" from [Google Fonts](https://fonts.google.com/).
+**Castleton Green**
+"Castleton Green is a deep, rich green color, resembling the color of Castleton tea leaves. It's a classic and timeless color, ideal for creating a traditional and elegant ambiance."
+It also resembles nature and fits well with the animals theme of the cards. It is used for text, as background for buttons and as border for the cards.
+
+**Champagne**
+"Named after the bubbly beverage, champagne is a mixture of yellow and orange and closely resembles beige. Sitting on the inner, paler portion of the color wheel, the warmth of orange mellows the brightness of yellow in it.
+Champagne brings to mind the effervescence of the drink. Because the drink is usually consumed in happy events like weddings or New Years, it also evokes feelings of joy." 
+And of course our Memory Game shall bring joy to the users. The color is used as background color.
+
+**White**
+"White is clean, simple, and pure. It stands in stark opposition to black, and its meanings are unequivocal. As white light contains all the colors of the spectrum, it’s an inclusive, impartial color, favoring no single hue and refusing to take sides."
+Here it is used as high contrast text color against the dark Castleton Green of buttons and the selected difficulty levels. 
+
+
+## Font
+"Hammersmith One is a very low contrast typeface inspired by the Johnston UK lettering tradition. Hammersmith One shows the quirks of a somewhat naive, handmade, brush written letters including a wider than normal "e" and "s" as well as dark joins between stroke which are normally compensated for in type. The sources for this design have been adapted not just for type but specifically for use as a web type. This font works well to even smaller sizes than was originally expected."
+The font was chosen as it provides very well readability in all sizes, looks very clean but still has a "funny" and playful touch to it.
+
+"Hammersmith One" from [Google Fonts](https://fonts.google.com/).
+
+
+## Layout
+The layout was kept very simple. Main focus is on playing a game that requires concentration, at least when playing the hard or extrem level. As some of the used images look very similar both in form and color, I decided to keep the cards at a reasonable size even when that means that the user has to scroll on small screens. 
+Both myself and some friends tried the extrem level on mobiles and nobody considered scrolling as an issue. I think it would be much more annoying when you can't figure out what animal you are actually seeing on the screen.
 
 ## Technology
 
@@ -246,11 +276,26 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   
 The live link can be found here - <https://claudiainsweden.github.io/train-your-brain/>
 
+## Forkning
+
+A fork is a new repository that shares code and visibility settings with the original repository.
+Please refer to the official GitHub documentation on how to fork my repository.
+![Link to the GitHub Documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)
+![Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
+
+## Cloning
+
+Cloning a repository pulls down a full copy of all the repository data that GitHub.com has at that point in time, including all versions of every file and folder for the project. 
+Please refer to the official GitHub documentation on how to clone my repository.
+![Link to the GitHub Documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+![Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
+
+
 ## Credits
 
 ### Content
 
-Inspiration came from research on LinkedIn where former Code Institute students published their memory games from PP2 projects and because I myself like to play memory.
+Inspiration came from research on LinkedIn where former Code Institute students published their PP2 projects and because I myself like to play memory.
 
 ### Media
 
@@ -267,11 +312,17 @@ All images, icons and illustrations are from free sources as listed below:
 - Paw image for back side of cards from [Vectorstock](https://www.vectorstock.com/royalty-free-vector/a-footpath-trail-dog-prints-walking-randomly-vector-33704528)
 - Facebook Share Button from [Meta for Developers](https://developers.facebook.com/docs/plugins/share-button/)
 
+### Color Description
+- White: <https://www.sensationalcolor.com/meaning-of-white/>
+- Champagne: <https://www.canva.com/colors/color-meanings/champagne/>
+- Castleton Green: <https://colors.muz.li/color/castleton-green>
+
 ### Code
 
 The following tutorials and websites were used for inspiration and guidance:
 
 - Memory game board: [freeCodeCamp.org](https://www.youtube.com/watch?v=ZniVgo8U7ek)
+- Memory game: [JavaScriptAcademy](https://youtu.be/xWdkt6KSirw?si=gYekWZV2OPfj7r0K)
 - Window: confirm() method: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 - Difficulty level: [Memory Master](https://natashary.github.io/memory-game/)
 
