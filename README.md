@@ -67,8 +67,8 @@ The cards are flipped so that the backside with paw-prints is visible. The front
 
 There are totally 25 cards available. Before a new game starts, all 25 cards are shuffled. Then, the number of cards according to the selected difficulty level is extracted, duplicated and shuffled once more before the game board is populated.
 
-On small screens the game boards consists of 4 columns, on large screens of 6 columns. 
-The game is designed for screens as small as 300px. Scrolling is unavoidable for medium to expert levels, however this does not compromise the playing experience.
+On small screens the game board consists of 4 columns, on large screens of 6 columns. 
+The game is designed for screens as small as 300px. Scrolling is unavoidable for hard and expert levels, however this does not compromise the playing experience.
 
 Easy level consists of 12 cards/6 pairs
 
@@ -88,17 +88,18 @@ Expert level consists of 48 cards/24 pairs
 
 
 
-The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user. 
+The user starts the game by flipping the first card to see the animal on the front. When the user clicks on a second card, the cards will be compared with each other. When the cards match, that is if they show the same animal, the cards will remain flipped and stay visible to the user throughout the rest of game. 
 If the cards don't match, the cards will be unflipped and the user may continue flipping cards to find matches.
 
 The board will lock when two cards have been flipped to avoid that more than 2 cards can be selected. The flipped cards will be visible for one second before they are unflipped.
 
 Each time the user flips two cards, the moves-counter on top of the game board will increase by 1.
 
-When the user has found all matching pairs, an alert will pop-up with the message "Congratulations! You found all matches! Well done!". When the user clicks OK in the alert window, it will be closed and the user can select a different level and start a new game by clicking the button "Start". 
+When the user has found all matching pairs, a dialog box will pop-up with the message "Congratulations! You found all matches! Well done!" including the animated "Partying-face" emoji. When the user clicks on the Close-button, the dialog box will be closed and the user can select a different level and start a new game by clicking the button "Start". 
 
 
-![Alert Congratulations](assets/readme-docs/alert-congratulations.png)
+![Alert Congratulations](assets/readme-docs/youwon.gif)
+
 
 To avoid accidential restarts during a game, the user will need to confirm that a new game should start. 
 
@@ -113,19 +114,19 @@ When the user confirms, the moves-counter will be reset to 0 and a new game boar
 
 ### Footer
 
-The sticky footer area contains a Facebook share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game when the user is logged in to Facebook. If this is not the case, the Facebook Log-in page will be displayed. 
+The sticky footer contains a Facebook share-button that opens a news feed window on Facebook, showing a preview of the game and the link to the game when the user is logged in to Facebook. If this is not the case, the Facebook Log-in page will be displayed. 
 
-![Share on Facebook](assets/images/facebook-share.webp)
+![Share on Facebook](assets/readme-docs/facebook-share.png)
 
 ### 404
 
-A customized 404 page with a link to the game was created to avoid frustrated users when something's going wrong.
+A customized 404 page with a link to the game was created to avoid frustrated users when something's going wrong. Following the animals-theme from the game, the page also displays the animated emoji "Scream-cat".
 
 ![404 Page](assets/readme-docs/404.gif)
 
 ## Future Features
 
-While the current version is fully functional, there are some ideas for future development:
+While the current version is fully functional and entertaining, there are some ideas for future development:
 
 - Let user choose different topics for the front cards
 - Add instructions
@@ -134,43 +135,54 @@ While the current version is fully functional, there are some ideas for future d
 
 ## Color scheme
 
-The color scheme was selected as it is calm and doesn't distract the user from the images that shall be matched. 
+The color scheme was selected as it's calm and doesn't distract the user from the images that shall be matched. 
 
 ![Color Scheme](assets/readme-docs/color-scheme.png)
 
-**Castleton Green**
-"Castleton Green is a deep, rich green color, resembling the color of Castleton tea leaves. It's a classic and timeless color, ideal for creating a traditional and elegant ambiance."
-It also resembles nature and fits well with the animals theme of the cards. It is used for text, as background for buttons and as border for the cards.
 
-**Champagne**
-"Named after the bubbly beverage, champagne is a mixture of yellow and orange and closely resembles beige. Sitting on the inner, paler portion of the color wheel, the warmth of orange mellows the brightness of yellow in it.
-Champagne brings to mind the effervescence of the drink. Because the drink is usually consumed in happy events like weddings or New Years, it also evokes feelings of joy." 
-And of course our Memory Game shall bring joy to the users. The color is used as background color.
+**White**<br>
+_"White is clean, simple, and pure. It stands in stark opposition to black, and its meanings are unequivocal. As white light contains all the colors of the spectrum, it’s an inclusive, impartial color, favoring no single hue and refusing to take sides."_<br>
+_[Source of description of "white"](https://www.sensationalcolor.com/meaning-of-white/)_<br>
+Here it's used as high contrast text color against the dark Castleton Green of buttons and the selected difficulty levels.
 
-**White**
-"White is clean, simple, and pure. It stands in stark opposition to black, and its meanings are unequivocal. As white light contains all the colors of the spectrum, it’s an inclusive, impartial color, favoring no single hue and refusing to take sides."
-Here it is used as high contrast text color against the dark Castleton Green of buttons and the selected difficulty levels. 
+**Castleton Green**<br>
+_"Castleton Green is a deep, rich green color, resembling the color of Castleton tea leaves. It's a classic and timeless color, ideal for creating a traditional and elegant ambiance."_<br>
+_[Source of description "castleton green"](https://colors.muz.li/color/castleton-green)_<br>
+It also resembles nature and fits well with the animal theme of the cards. It's used for text, as background for buttons and as border for the cards.
+
+**Champagne**<br>
+_"Named after the bubbly beverage, champagne is a mixture of yellow and orange and closely resembles beige. Sitting on the inner, paler portion of the color wheel, the warmth of orange mellows the brightness of yellow in it.
+Champagne brings to mind the effervescence of the drink. Because the drink is usually consumed in happy events like weddings or New Years, it also evokes feelings of joy."_ <br>
+_[Source of description of "champagne"](https://www.canva.com/colors/color-meanings/champagne/)_<br>
+Of course our Memory Game also bring joy to the users. Therefore, champagne is used as background color.
+
+**Tawny**<br>
+_"Tawny comes from the Anglo-Norman word, taune, which means tanned. Although you might think first of sun tans, which do indeed produce tawny colors in light-skinned people (as long as they don't go straight to lobster red), tan first meant the bark of an oak tree, used to cure leather. It's from the look of tanned leather that we get skin tans and the word tawny."_<br>
+_[Source of description of "tawny"](https://www.vocabulary.com/dictionary/tawny)_<br>
+In this game we use tawny as border color for the dialog boxes so that they stand out clearly agains the game in the background. It's also the color of the paws print on the card backside.
+
 
 
 ## Font
-"Hammersmith One is a very low contrast typeface inspired by the Johnston UK lettering tradition. Hammersmith One shows the quirks of a somewhat naive, handmade, brush written letters including a wider than normal "e" and "s" as well as dark joins between stroke which are normally compensated for in type. The sources for this design have been adapted not just for type but specifically for use as a web type. This font works well to even smaller sizes than was originally expected."
-The font was chosen as it provides very well readability in all sizes, looks very clean but still has a "funny" and playful touch to it.
+_"Hammersmith One is a very low contrast typeface inspired by the Johnston UK lettering tradition. Hammersmith One shows the quirks of a somewhat naive, handmade, brush written letters including a wider than normal "e" and "s" as well as dark joins between stroke which are normally compensated for in type. The sources for this design have been adapted not just for type but specifically for use as a web type. This font works well to even smaller sizes than was originally expected."_<br>
+The font was chosen as it provides very well readability in all sizes, looks very clean but still has a playful touch to it.
 
 "Hammersmith One" from [Google Fonts](https://fonts.google.com/).
 
 
 ## Layout
-The layout was kept very simple. Main focus is on playing a game that requires concentration, at least when playing the hard or extrem level. As some of the used images look very similar both in form and color, I decided to keep the cards at a reasonable size even when that means that the user has to scroll on small screens. 
-Both myself and some friends tried the extrem level on mobiles and nobody considered scrolling as an issue. I think it would be much more annoying when you can't figure out what animal you are actually seeing on the screen.
+The layout was kept very simple. Main focus is on playing a game that requires concentration, at least when playing the hard or extrem level. <br>As some of the used images look very similar both in form and color, I decided to keep the cards at a reasonable size even when that means that the user has to scroll on small screens. 
+Both myself and friends tried the extrem level on mobiles and nobody considered scrolling an issue. I think it would be much more annoying when you can't figure out what animal you are actually seeing on the screen.
 
 ## Technology
 
-- IDE: GitPod
-- Repository: GitHub
-- Image editor: SnagIt
+- IDE: [GitPod](https://www.gitpod.io/)
+- Repository: [GitHub](https://github.com/)
+- Image editor: [SnagIt](https://www.techsmith.com/screen-capture.html)
 - Image converter: [Birme](<https://www.birme.net/>)
 - Favicon generator: [Favicon](https://favicon.io/)
 - Image background remover: [Adobe Express](https://www.adobe.com/express/feature/image/remove-background)
+- Color Scheme: [Coolors](https://coolors.co/?home)
   
 ## Testing
 
@@ -228,18 +240,18 @@ The site scores very high in all areas.
 | Select box | Click | Click on option Medium shows Medium as selected|
 | Select box | Click | Click on option Hard shows Hard as selected|
 | Select box | Click | Click on option Expert shows Expert as selected|
-| Start Button | Click | Displays a windows alert asking to confirm that a new game shall start |
-| OK Button in Alert Window	| Click | Depending on the selected difficulty level and screen size the game board is populated as follows: |
+| Start Button | Click | Displays a dialog box asking to confirm that a new game shall start.<br>The area behind the dialog box is faded and cannot be clicked. |
+| New Game-button in dialog box	| Click | Depending on the selected difficulty level and screen size the game board is populated as follows: |
 | 	| Level Easy | Screen size < 992px: 4 columns, 3 rows <br>Screens size > 992px: 6 columns, 2 rows |
 | 	| Level Medium | Screen size < 992px: 4 columns, 6 rows <br>Screens size > 992px: 6 columns, 4 rows |
 | 	| Level Hard | Screen size < 992px: 4 columns, 9 rows <br>Screens size > 992px: 6 columns, 6 rows |
 | 	| Level Expert | Screen size < 992px: 4 columns, 12 rows <br>Screens size > 992px: 6 columns, 8 rows |
-| Cancel Button in Alert Window | Click  |Closes the alert window and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
+| Cancel-button in dialog box | Click  |Closes the dialog box and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
 | **Game won** | 	| |
-| All card pairs matched  | Window alert  |A window alert box appears with the text "Congratulations! You found all matches! Well done!"|
-| OK Button in Alert Window  | Click | Closes the alert window, game board shows all matched cards and number of moves |
+| All card pairs matched  | Dialog box  |A dialog box appears with the text "Congratulations! You found all matches! Well done!" and a animated "Partying-face" emoji.<br>The area behind the dialog box is faded and cannot be clicked.|
+| Close-button in dialog box  | Click | Closes the dialog box, game board shows all matched cards and number of moves |
 | **Footer**  |  | |
-| Facebook Icon & Share  | Click |Opens a Facebook news feed window with a preview of the game and a link to it |
+| Facebook Icon & Share  | Click |Opens a Facebook news feed window with a link to the game in a new tab|
 
 ## Browser Testing
 
@@ -279,16 +291,16 @@ The live link can be found here - <https://claudiainsweden.github.io/train-your-
 ## Forkning
 
 A fork is a new repository that shares code and visibility settings with the original repository.
-Please refer to the official GitHub documentation on how to fork my repository.
-![Link to the GitHub Documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)
-![Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
+<br>Please refer to the official GitHub documentation on how to fork my repository.<br>
+[Link to the GitHub Documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)<br>
+[Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
 
 ## Cloning
 
 Cloning a repository pulls down a full copy of all the repository data that GitHub.com has at that point in time, including all versions of every file and folder for the project. 
-Please refer to the official GitHub documentation on how to clone my repository.
-![Link to the GitHub Documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-![Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
+<br>Please refer to the official GitHub documentation on how to clone my repository.<br>
+[Link to the GitHub Documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)<br>
+[Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
 
 
 ## Credits
@@ -310,12 +322,9 @@ All images, icons and illustrations are from free sources as listed below:
 - Images converted to webp with [Birme](https://www.birme.net/)
 - Images for cards from [Macrovector on Freepik](https://www.freepik.com/free-vector/wild-home-animals-set_4005528.htm)
 - Paw image for back side of cards from [Vectorstock](https://www.vectorstock.com/royalty-free-vector/a-footpath-trail-dog-prints-walking-randomly-vector-33704528)
+- Animated emojis on 404 page and game won dialog box from [Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/)
 - Facebook Share Button from [Meta for Developers](https://developers.facebook.com/docs/plugins/share-button/)
 
-### Color Description
-- White: <https://www.sensationalcolor.com/meaning-of-white/>
-- Champagne: <https://www.canva.com/colors/color-meanings/champagne/>
-- Castleton Green: <https://colors.muz.li/color/castleton-green>
 
 ### Code
 
@@ -325,6 +334,7 @@ The following tutorials and websites were used for inspiration and guidance:
 - Memory game: [JavaScriptAcademy](https://youtu.be/xWdkt6KSirw?si=gYekWZV2OPfj7r0K)
 - Window: confirm() method: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 - Difficulty level: [Memory Master](https://natashary.github.io/memory-game/)
+- HTML dialog element: [Web Dev Simplified Blog](https://blog.webdevsimplified.com/2023-04/html-dialog/)
 
 as well as
 
@@ -333,3 +343,4 @@ as well as
 - [Stack overflow](https://stackoverflow.com/)
 - [Medium](https://medium.com/)
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
+- Code Institute Slack Channel

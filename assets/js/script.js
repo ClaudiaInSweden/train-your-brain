@@ -285,18 +285,11 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-// When all cards are matched a window alert will pop-up
+// When all cards are matched a dialog window will pop-up
 // with congratulations and information that all pairs
 // were found.
 // The set Timeout will allow the last card to be flipped
 // before the alert appears on screen
-// function showAlert() {
-//   let myText = "Congratulations!\nYou found all matches!\nWell done!";
-//   setTimeout(() => {
-//     alert(myText);
-//   }, 700);
-// }
-
 function showAlert() {
   setTimeout(() => {
     const dialog = document.querySelector("#youwon");
@@ -317,13 +310,6 @@ function cleanBoard() {
 // When user clicks on start butten the user has to confirm
 // that a new game should start to avoid faulty restarts
 // When the user confirms, a new game starts
-// function getConfirmation() {
-//   let startGame = confirm("Are you sure you want to start a new game?");
-//   if (startGame == true) {
-//     moves = 0;
-//     restart();
-//   }
-// }
 function getConfirmation() {
 const dialog = document.querySelector("#newgame");
 const cancelBtn = document.querySelector("#cancel");
