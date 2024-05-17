@@ -290,10 +290,22 @@ function resetBoard() {
 // were found.
 // The set Timeout will allow the last card to be flipped
 // before the alert appears on screen
+// function showAlert() {
+//   let myText = "Congratulations!\nYou found all matches!\nWell done!";
+//   setTimeout(() => {
+//     alert(myText);
+//   }, 700);
+// }
+
 function showAlert() {
-  let myText = "Congratulations!\nYou found all matches!\nWell done!";
   setTimeout(() => {
-    alert(myText);
+    const dialog = document.querySelector("#youwon");
+    const closeBtn = document.querySelector("#close");
+    dialog.show();
+    
+    closeBtn.addEventListener("click", () => {
+    dialog.close();
+    });
   }, 700);
 }
 
@@ -305,12 +317,26 @@ function cleanBoard() {
 // When user clicks on start butten the user has to confirm
 // that a new game should start to avoid faulty restarts
 // When the user confirms, a new game starts
+// function getConfirmation() {
+//   let startGame = confirm("Are you sure you want to start a new game?");
+//   if (startGame == true) {
+//     moves = 0;
+//     restart();
+//   }
+// }
 function getConfirmation() {
-  let startGame = confirm("Are you sure you want to start a new game?");
-  if (startGame == true) {
-    moves = 0;
-    restart();
-  }
+const dialog = document.querySelector("#newgame");
+const cancelBtn = document.querySelector("#cancel");
+const confirmBtn = document.querySelector("#confirm");
+dialog.show();
+
+cancelBtn.addEventListener("click", () => {
+dialog.close();
+});
+confirmBtn.addEventListener("click", () => {
+dialog.close();
+restart();
+});
 }
 
 // Click on OK in the confirmation window, starts a new game.
