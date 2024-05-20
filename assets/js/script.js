@@ -169,7 +169,7 @@ function selectLevel() {
   if(level == "easy") difficulty = 6;
   else if(level == "medium") difficulty = 12;
   else if(level == "hard") difficulty = 18;
-  else if(level == "expert") difficulty = 24;
+  else if(level == "expert") difficulty = 25;
 
   // Take only number of cards according to difficulty level from all cards
   let numberOfCards = allCards.slice(0, difficulty);
@@ -189,6 +189,44 @@ function shuffleCards() {
   }
 }
 
+
+let mqls = [
+  window.matchMedia("(max-width: 510px)"),
+  window.matchMedia("(min-width: 510px) and (max-width: 767px)"),
+  window.matchMedia("(min-width: 768px) and (max-width: 991px)"),
+  window.matchMedia("(min-width: 992px)")
+]
+function gridSize(mql) {
+  if (mqls[0].matches && difficulty === 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 57px)"
+  } else if (mqls[0].matches && difficulty != 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 65px)"
+  }
+  if (mqls[1].matches && difficulty === 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 65px)"
+  } else if (mqls[1].matches && difficulty != 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 65px)"
+  }
+  if (mqls[2].matches && difficulty === 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 70px)"
+  } else if (mqls[2].matches && difficulty != 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 65px)"
+  }
+  if (mqls[3].matches && difficulty === 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 75px)"
+  } else if (mqls[3].matches && difficulty != 25) {
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 65px)"
+  }
+}
+
+for (let i=0; i < mqls.length; i++) {
+  gridSize(mqls[i])
+  mqls[i].addEventListener("change", gridSize)
+}
+
+  
+  
+
 // Create the game board with 4 resp 6 columns depending on screen size
 // and auto-generate number of rows depending on number of cards
 // Add alt-attribute to images for improved accessibility
@@ -205,10 +243,13 @@ function generateCards() {
       </div>
       <div class="back"></div>
     `;
+    
     gameContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
 }
+
+
 
 // Checks first if the game board is locked.
 // If not, the card which has been clicked is the first card
@@ -335,6 +376,7 @@ function restart() {
   shuffleAllCards();
   selectLevel();
   shuffleCards();
+  gridSize();
   generateCards();
   displayMoves();
   cards = [];

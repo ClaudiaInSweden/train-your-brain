@@ -92,24 +92,25 @@ a:hover {
 .game-container {
     display: grid;
     justify-content: center;
-    grid-gap: 10px;
-    grid-template-columns: repeat(4, 90px);
-    grid-template-rows: repeat(auto-fill, 90px);
+    grid-gap: 8px;
+    grid-template-columns: repeat(4, 57px);
+    grid-template-rows: repeat(auto-fill, 57px);
     margin-bottom: 5px;
 }
+
 
 /* Cards section */
 .card {
     border-radius: 10px;
-    /* border: 2px solid #035e4a; */
     padding: 5px;
     cursor: pointer;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
-    height: 90px;
-    width: 90px;
+    height: 57px;
+    width: 57px;
     position: relative;
 }
+
 .card.flipped {
     transform: rotateY(180deg);
 }
@@ -126,7 +127,7 @@ a:hover {
     top: 0;
     left: 0;
     backface-visibility: hidden;
-} 
+}
 .card .front {
     display: flex;
     justify-content: center;
@@ -204,6 +205,50 @@ dialog::backdrop {
     .game-container {
         width: 100vw;
         grid-gap: 3px;
+        grid-template-columns: repeat(4, 57px);
+        grid-template-rows: repeat(auto-fill, 57px);
+    }
+    .card {
+        height: 57px;
+        width: 57px;
+    }
+    .front-image {
+        width: 57px;
+        height: 57px;
+    }
+    .front,
+    .back {
+    width: 57px;
+    height: 57px;
+    } 
+}
+/* Media Queries */
+@media screen and (min-width: 510px) and (max-width: 767px) {
+    .game-container {
+        width: 100vw;
+        grid-gap: 3px;
+        grid-template-columns: repeat(4, 65px);
+        grid-template-rows: repeat(auto-fill, 65px);
+    }
+    .card {
+        height: 65px;
+        width: 65px;
+    }
+    .front-image {
+        width: 65px;
+        height: 65px;
+    }
+    .front,
+    .back {
+    width: 65px;
+    height: 65px;
+    } 
+}
+
+@media screen and (min-width: 768px) and (max-width: 991) {
+    .game-container {
+        width: 100vw;
+        grid-gap: 7px;
         grid-template-columns: repeat(4, 70px);
         grid-template-rows: repeat(auto-fill, 70px);
     }
@@ -222,31 +267,23 @@ dialog::backdrop {
     } 
 }
 
-@media screen and (min-width: 768px) {
-    .game-container {
-        width: 100vw;
-        grid-gap: 10px;
-        grid-template-columns: repeat(4, 90px);
-        grid-template-rows: repeat(auto-fill, 90px);
-    }
-    .card {
-        height: 90px;
-        width: 90px;
-    }
-    .front-image {
-        width: 90px;
-        height: 90px;
-    }
-    .front,
-    .back {
-    width: 90px;
-    height: 90px;
-    } 
-}
 
 @media screen and (min-width: 992px) {
     .game-container {
-        grid-template-columns: repeat(6, 90px);
-        grid-template-rows: repeat(auto-fill, 90px);
+        grid-template-columns: repeat(6, 75px);
+        grid-template-rows: repeat(auto-fill, 75px);
     }
+    .card {
+        height: 75px;
+        width: 75px;
+    }
+    .front-image {
+        width: 75px;
+        height: 75px;
+    }
+    .front,
+    .back {
+    width: 75px;
+    height: 75px;
+    } 
 }
