@@ -189,39 +189,43 @@ function shuffleCards() {
   }
 }
 
+// Media queries for difficulty level Expert
+// Depending on current media size and if difficulty level is Expert
+// the game board will be populated with 5 columns and defined card sizes
+// so the user can see all cards on the screen without scrolling
 
 let mqls = [
   window.matchMedia("(max-width: 510px)"),
   window.matchMedia("(min-width: 510px) and (max-width: 767px)"),
   window.matchMedia("(min-width: 768px) and (max-width: 991px)"),
   window.matchMedia("(min-width: 992px)")
-]
+];
 function gridSize(mql) {
   if (mqls[0].matches && difficulty === 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 57px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 57px)";
   } else if (mqls[0].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 57px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 57px)";
   }
   if (mqls[1].matches && difficulty === 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 65px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 65px)";
   } else if (mqls[1].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 65px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 65px)";
   }
   if (mqls[2].matches && difficulty === 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 70px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 70px)";
   } else if (mqls[2].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 70px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 70px)";
   }
   if (mqls[3].matches && difficulty === 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 75px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(10, 75px)";
   } else if (mqls[3].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 75px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 75px)";
   }
 }
-
+// If screen size changes, the grid will be updated accordingly
 for (let i=0; i < mqls.length; i++) {
-  gridSize(mqls[i])
-  mqls[i].addEventListener("change", gridSize)
+  gridSize(mqls[i]);
+  mqls[i].addEventListener("change", gridSize);
 }
 
   

@@ -67,8 +67,8 @@ The cards are flipped so that the backside with paw-prints is visible. The front
 
 There are totally 25 cards available. Before a new game starts, all 25 cards are shuffled. Then, the number of cards according to the selected difficulty level is extracted, duplicated and shuffled once more before the game board is populated.
 
-On small screens the game board consists of 4 columns, on large screens of 6 columns. 
-The game is designed for screens as small as 300px. Scrolling is unavoidable for hard and expert levels, however this does not compromise the playing experience.
+On small screens the game board consists of 4 columns, respective 5 columns for Expert level; and on large screens of 6 columns, respective 10 columns for Expert level. 
+The game is designed for screens as small as 300px.
 
 Easy level consists of 12 cards/6 pairs
 
@@ -82,7 +82,7 @@ Hard level consists of 36 cards/18 pairs
 
 ![Hard level](assets/readme-docs/game-won-hard.png)
 
-Expert level consists of 48 cards/24 pairs
+Expert level consists of 50 cards/25 pairs
 
 ![Expert level](assets/readme-docs/game-won-expert.png)
 
@@ -142,23 +142,23 @@ The color scheme was selected as it's calm and doesn't distract the user from th
 
 **White**<br>
 _"White is clean, simple, and pure. It stands in stark opposition to black, and its meanings are unequivocal. As white light contains all the colors of the spectrum, it’s an inclusive, impartial color, favoring no single hue and refusing to take sides."_<br>
-_[Source of description of "white"](https://www.sensationalcolor.com/meaning-of-white/)_<br>
-Here it's used as high contrast text color against the dark Castleton Green of buttons and the selected difficulty levels.
+_[Source of description for "white"](https://www.sensationalcolor.com/meaning-of-white/)_<br>
+Here white is used as high contrast text color against the dark Castleton Green of buttons and the selected difficulty levels.
 
 **Castleton Green**<br>
 _"Castleton Green is a deep, rich green color, resembling the color of Castleton tea leaves. It's a classic and timeless color, ideal for creating a traditional and elegant ambiance."_<br>
-_[Source of description "castleton green"](https://colors.muz.li/color/castleton-green)_<br>
-It also resembles nature and fits well with the animal theme of the cards. It's used for text, as background for buttons and as border for the cards.
+_[Source of description for "castleton green"](https://colors.muz.li/color/castleton-green)_<br>
+Castleton Green also resembles nature and fits well with the animal theme of the cards. It's used for text, as background for buttons and as border for the cards.
 
 **Champagne**<br>
 _"Named after the bubbly beverage, champagne is a mixture of yellow and orange and closely resembles beige. Sitting on the inner, paler portion of the color wheel, the warmth of orange mellows the brightness of yellow in it.
 Champagne brings to mind the effervescence of the drink. Because the drink is usually consumed in happy events like weddings or New Years, it also evokes feelings of joy."_ <br>
-_[Source of description of "champagne"](https://www.canva.com/colors/color-meanings/champagne/)_<br>
+_[Source of description for "champagne"](https://www.canva.com/colors/color-meanings/champagne/)_<br>
 Of course our Memory Game also bring joy to the users. Therefore, champagne is used as background color.
 
 **Tawny**<br>
 _"Tawny comes from the Anglo-Norman word, taune, which means tanned. Although you might think first of sun tans, which do indeed produce tawny colors in light-skinned people (as long as they don't go straight to lobster red), tan first meant the bark of an oak tree, used to cure leather. It's from the look of tanned leather that we get skin tans and the word tawny."_<br>
-_[Source of description of "tawny"](https://www.vocabulary.com/dictionary/tawny)_<br>
+_[Source of description for "tawny"](https://www.vocabulary.com/dictionary/tawny)_<br>
 In this game we use tawny as border color for the dialog boxes so that they stand out clearly agains the game in the background. It's also the color of the paws print on the card backside.
 
 
@@ -171,8 +171,8 @@ The font was chosen as it provides very well readability in all sizes, looks ver
 
 
 ## Layout
-The layout was kept very simple. Main focus is on playing a game that requires concentration, at least when playing the hard or extrem level. <br>As some of the used images look very similar both in form and color, I decided to keep the cards at a reasonable size even when that means that the user has to scroll on small screens. 
-Both myself and friends tried the extrem level on mobiles and nobody considered scrolling an issue. I think it would be much more annoying when you can't figure out what animal you are actually seeing on the screen.
+The layout was kept very simple. Main focus is on playing a game that requires concentration, at least when playing the hard or extrem level. <br>
+One challenge was to avoid the necessity for scrolling for expert level but still keeping a reasonable card size. I solved this by using 25 pairs/50 cards and dynamically change the game board to 5 columns for small screens respective 10 columns for larger screens.
 
 ## Technology
 
@@ -245,7 +245,7 @@ The site scores very high in all areas.
 | 	| Level Easy | Screen size < 992px: 4 columns, 3 rows <br>Screens size > 992px: 6 columns, 2 rows |
 | 	| Level Medium | Screen size < 992px: 4 columns, 6 rows <br>Screens size > 992px: 6 columns, 4 rows |
 | 	| Level Hard | Screen size < 992px: 4 columns, 9 rows <br>Screens size > 992px: 6 columns, 6 rows |
-| 	| Level Expert | Screen size < 992px: 4 columns, 12 rows <br>Screens size > 992px: 6 columns, 8 rows |
+| 	| Level Expert | Screen size < 992px: 5 columns, 10 rows <br>Screens size > 992px: 10 columns, 5 rows |
 | Cancel-button in dialog box | Click  |Closes the dialog box and leaves the game in its present state, showing matches and/or flipped cards and number of moves|
 | **Game won** | 	| |
 | All card pairs matched  | Dialog box  |A dialog box appears with the text "Congratulations! You found all matches! Well done!" and a animated "Partying-face" emoji.<br>The area behind the dialog box is faded and cannot be clicked.|
@@ -276,7 +276,6 @@ Functionality, links, layout, and responsiveness were tested on the following de
 
 2. When the game was near to be finished I realized that the game board would be empty on the first page load. As this is not a good user-experience, I decided to pre-populate the selected cards array with 6 cards.
 
-3. Originally I had 5 difficulty levels and wanted to use the matchMedia method to change the game grid from 4 to 6 columns for the two hardest levels on large screens. Unfortunately this did not work very well and the result was a quite bumpy layout change. To make the transition smooth, I reduced the number of difficulty levels to four and just took number of cards that can be divided both by 4 and 6 and added CSS media queries instead. 
 
 ## Deployment
 
@@ -291,14 +290,14 @@ The live link can be found here - <https://claudiainsweden.github.io/train-your-
 ## Forkning
 
 A fork is a new repository that shares code and visibility settings with the original repository.
-<br>Please refer to the official GitHub documentation on how to fork my repository.<br>
+<br>Please refer to the official GitHub documentation on how to fork my repository.<br>You're welcome to do so.<br>
 [Link to the GitHub Documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)<br>
 [Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
 
 ## Cloning
 
 Cloning a repository pulls down a full copy of all the repository data that GitHub.com has at that point in time, including all versions of every file and folder for the project. 
-<br>Please refer to the official GitHub documentation on how to clone my repository.<br>
+<br>Please refer to the official GitHub documentation on how to clone my repository.<br>You're welcome to do so.<br>
 [Link to the GitHub Documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)<br>
 [Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
 
@@ -323,7 +322,6 @@ All images, icons and illustrations are from free sources as listed below:
 - Images for cards from [Macrovector on Freepik](https://www.freepik.com/free-vector/wild-home-animals-set_4005528.htm)
 - Paw image for back side of cards from [Vectorstock](https://www.vectorstock.com/royalty-free-vector/a-footpath-trail-dog-prints-walking-randomly-vector-33704528)
 - Animated emojis on 404 page and game won dialog box from [Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/)
-- Facebook Share Button from [Meta for Developers](https://developers.facebook.com/docs/plugins/share-button/)
 
 
 ### Code
@@ -335,6 +333,7 @@ The following tutorials and websites were used for inspiration and guidance:
 - Window: confirm() method: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 - Difficulty level: [Memory Master](https://natashary.github.io/memory-game/)
 - HTML dialog element: [Web Dev Simplified Blog](https://blog.webdevsimplified.com/2023-04/html-dialog/)
+- Match multiple media queries: [JavaScript Kit](http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml)
 
 as well as
 
