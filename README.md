@@ -290,14 +290,14 @@ The live link can be found here - <https://claudiainsweden.github.io/train-your-
 ## Forkning
 
 A fork is a new repository that shares code and visibility settings with the original repository.
-<br>Please refer to the official GitHub documentation on how to fork my repository.<br>You're welcome to do so.<br>
+<br>You're welcome to do so.<br>Please refer to the official GitHub documentation on how to fork my repository.<br>
 [Link to the GitHub Documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)<br>
 [Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
 
 ## Cloning
 
 Cloning a repository pulls down a full copy of all the repository data that GitHub.com has at that point in time, including all versions of every file and folder for the project. 
-<br>Please refer to the official GitHub documentation on how to clone my repository.<br>You're welcome to do so.<br>
+<br>You're welcome to do so.<br>Please refer to the official GitHub documentation on how to clone my repository.<br>
 [Link to the GitHub Documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)<br>
 [Link to the Train your Brain Repository](https://github.com/ClaudiaInSweden/train-your-brain)
 
