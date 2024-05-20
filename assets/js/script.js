@@ -191,12 +191,14 @@ function shuffleCards() {
 
 // Media queries for difficulty level Expert
 // Depending on current media size and if difficulty level is Expert
-// the game board will be populated with 5 columns and defined card sizes
+// the game board will be populated with 5 resp 10 columns
 // so the user can see all cards on the screen without scrolling
+// Inspiration from JavaScript Kit:
+// http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml
 
 let mqls = [
   window.matchMedia("(max-width: 510px)"),
-  window.matchMedia("(min-width: 510px) and (max-width: 767px)"),
+  window.matchMedia("(min-width: 511px) and (max-width: 767px)"),
   window.matchMedia("(min-width: 768px) and (max-width: 991px)"),
   window.matchMedia("(min-width: 992px)")
 ];
@@ -228,10 +230,7 @@ for (let i=0; i < mqls.length; i++) {
   mqls[i].addEventListener("change", gridSize);
 }
 
-  
-  
-
-// Create the game board with 4 resp 6 columns depending on screen size
+// Create the game board with nr of columns depending on screen size
 // and auto-generate number of rows depending on number of cards
 // Add alt-attribute to images for improved accessibility
 function generateCards() {
@@ -247,13 +246,10 @@ function generateCards() {
       </div>
       <div class="back"></div>
     `;
-    
     gameContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
 }
-
-
 
 // Checks first if the game board is locked.
 // If not, the card which has been clicked is the first card
@@ -278,8 +274,8 @@ function flipCard() {
 
 // Checks if card 1 and card 2 match
 // If match, the Event Listener for click is removed
-// and the cards will no longer be flipped and
-// moves count increases with one
+// and the cards will no longer be flipped,
+// moves counter increases with one
 // If no match, cards will be unflipped
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
@@ -313,7 +309,7 @@ function disableCards() {
 }
 
 // When there is no match, cards will be unflipped
-// after 1 second and the board unlocked
+// after 1 second 
 function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove("flipped");
@@ -330,7 +326,7 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-// When all cards are matched a dialog window will pop-up
+// When all cards are matched, a dialog box will pop-up
 // with congratulations and information that all pairs
 // were found.
 // The set Timeout will allow the last card to be flipped
@@ -370,7 +366,7 @@ restart();
 });
 }
 
-// Click on OK in the confirmation window, starts a new game.
+// Click on New Game-button in the confirmation window, starts a new game.
 // All cards will be shuffled, number of cards according to selected level
 // will be picked from the allCards array and duplicated to get pairs.
 // Selected cards are shuffled again, moves and match counter are reset to 0

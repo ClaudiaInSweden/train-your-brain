@@ -55,10 +55,11 @@ select {
     color: #fff;
     padding: 2px;
     font-size: 1rem;
+    border-radius: 10px;
 }
 button {
     margin: 20px 5px;
-	padding: 5px 10px;
+	padding: 3px 20px;
 	background:  #035e4a;
 	color: #fff;
     border: 2px solid #035e4a;
@@ -95,7 +96,6 @@ a:hover {
     margin-bottom: 5px;
 }
 
-
 /* Cards section */
 .card {
     border-radius: 10px;
@@ -107,7 +107,6 @@ a:hover {
     width: 65px;
     position: relative;
 }
-
 .card.flipped {
     transform: rotateY(180deg);
 }
@@ -219,8 +218,7 @@ dialog::backdrop {
     height: 57px;
     } 
 }
-/* Media Queries */
-@media screen and (min-width: 510px) and (max-width: 767px) {
+@media screen and (min-width: 511px) and (max-width: 767px) {
     .game-container {
         width: 100vw;
         grid-template-columns: repeat(4, 65px);
@@ -241,12 +239,11 @@ dialog::backdrop {
     height: 65px;
     } 
 }
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .game-container {
         width: 100vw;
         grid-gap: 7px;
-        grid-template-columns: repeat(4, 70px);
+        grid-template-columns: repeat(6, 70px);
         grid-template-rows: repeat(auto-fill, 70px);
         gap: 6px;
     }
@@ -264,8 +261,6 @@ dialog::backdrop {
     height: 70px;
     } 
 }
-
-
 @media screen and (min-width: 992px) {
     .game-container {
         grid-template-columns: repeat(6, 75px);
