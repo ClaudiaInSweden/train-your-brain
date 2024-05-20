@@ -200,7 +200,7 @@ function gridSize(mql) {
   if (mqls[0].matches && difficulty === 25) {
     document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 57px)"
   } else if (mqls[0].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 65px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(4, 57px)"
   }
   if (mqls[1].matches && difficulty === 25) {
     document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 65px)"
@@ -210,12 +210,12 @@ function gridSize(mql) {
   if (mqls[2].matches && difficulty === 25) {
     document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 70px)"
   } else if (mqls[2].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 65px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 70px)"
   }
   if (mqls[3].matches && difficulty === 25) {
     document.querySelector(".game-container").style.gridTemplateColumns = "repeat(5, 75px)"
   } else if (mqls[3].matches && difficulty != 25) {
-    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 65px)"
+    document.querySelector(".game-container").style.gridTemplateColumns = "repeat(6, 75px)"
   }
 }
 

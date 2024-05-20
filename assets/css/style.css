@@ -92,9 +92,6 @@ a:hover {
 .game-container {
     display: grid;
     justify-content: center;
-    grid-gap: 8px;
-    grid-template-columns: repeat(4, 57px);
-    grid-template-rows: repeat(auto-fill, 57px);
     margin-bottom: 5px;
 }
 
@@ -106,8 +103,8 @@ a:hover {
     cursor: pointer;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
-    height: 57px;
-    width: 57px;
+    height: 65px;
+    width: 65px;
     position: relative;
 }
 
@@ -204,9 +201,9 @@ dialog::backdrop {
 @media screen and (max-width: 510px) {
     .game-container {
         width: 100vw;
-        grid-gap: 3px;
         grid-template-columns: repeat(4, 57px);
         grid-template-rows: repeat(auto-fill, 57px);
+        gap: 3px;
     }
     .card {
         height: 57px;
@@ -226,9 +223,9 @@ dialog::backdrop {
 @media screen and (min-width: 510px) and (max-width: 767px) {
     .game-container {
         width: 100vw;
-        grid-gap: 3px;
         grid-template-columns: repeat(4, 65px);
         grid-template-rows: repeat(auto-fill, 65px);
+        gap: 5px;
     }
     .card {
         height: 65px;
@@ -245,12 +242,13 @@ dialog::backdrop {
     } 
 }
 
-@media screen and (min-width: 768px) and (max-width: 991) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     .game-container {
         width: 100vw;
         grid-gap: 7px;
         grid-template-columns: repeat(4, 70px);
         grid-template-rows: repeat(auto-fill, 70px);
+        gap: 6px;
     }
     .card {
         height: 70px;
@@ -272,6 +270,7 @@ dialog::backdrop {
     .game-container {
         grid-template-columns: repeat(6, 75px);
         grid-template-rows: repeat(auto-fill, 75px);
+        gap: 8px;
     }
     .card {
         height: 75px;
